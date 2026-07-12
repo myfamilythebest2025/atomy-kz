@@ -58,8 +58,9 @@
     .tile.map-tile b{font-size:17px}
     .tile.map-tile span{flex:1}
     /* карта */
-    .map-wrap{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px #17352b22;margin-bottom:14px;background:#e9efe7}
-    .map-wrap iframe{display:block;width:100%;height:240px;border:0}
+    .map-wrap{display:block;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px #17352b22;margin-bottom:14px;background:#e9efe7;text-decoration:none}
+    .map-wrap img{display:block;width:100%;height:auto}
+    .map-open{position:absolute;right:10px;bottom:10px;background:#16352ee6;color:#fff;font-size:11.5px;font-weight:900;padding:7px 12px;border-radius:999px;box-shadow:0 4px 10px #0f2a2440}
     .addr{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:14px 16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .addr b{font-family:Lora,serif;font-size:16px;font-weight:600;display:block;margin-bottom:3px}
     .addr span{font-size:12.5px;color:var(--muted);line-height:1.45}
@@ -292,7 +293,10 @@
     <div class="sheet">
       <div class="sheet-head"><h2 id="t-map">Где нас найти</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=43.640398,51.161271&z=17&hl=ru&output=embed" loading="lazy" title="Карта: центр Atomy Altyn-Arman, Актау" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <a class="map-wrap" href="https://2gis.kz/aktau/inside/70030076138753224/firm/70000001078996125?m=51.161271%2C43.640398%2F20" target="_blank" rel="noopener">
+          <img src="assets/map.png" alt="Карта: центр Atomy Altyn-Arman, Актау, 5-й микрорайон 14/2">
+          <span class="map-open">Открыть в 2ГИС ↗</span>
+        </a>
         <div class="addr">
           <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
           <div>
