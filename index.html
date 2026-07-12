@@ -13,7 +13,6 @@
     МЕСТА ДЛЯ ДАННЫХ МАМЫ:
     1. Фото: assets/magda-photo.jpg, раскомментировать <img> в .avatar.
     2. «[N лет]» в окне «Обо мне».
-    Цены в попапах — официальный магазин atomy.kz, июль 2026.
   -->
   <style>
     :root{--ink:#203d35;--deep:#16352e;--deep2:#0f2a24;--gold:#bc9a52;--gold2:#a3823c;--gold-soft:#d7be83;--cream:#f7f4ec;--paper:#fffdf8;--line:#e5ddd0;--muted:#65736d;--atomy:#14aee2}
@@ -27,8 +26,8 @@
     /* шапка */
     .top{text-align:center;padding:20px 22px 4px}
     .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:900;margin:0 0 10px}
-    .brand{font-size:26px;line-height:.7;letter-spacing:-1.5px;color:var(--atomy);font-weight:900;margin:0 0 14px;text-shadow:0 2px 6px #14aee226}
-    .brand span{font-size:12px;vertical-align:top;margin-left:2px}
+    .brand{font-size:26px;line-height:.8;letter-spacing:-1.5px;color:var(--atomy);font-weight:900;margin:0 0 14px;text-shadow:0 2px 6px #14aee226}
+    .brand span{font-size:25px;vertical-align:baseline;margin-left:1px;letter-spacing:0}
     .brand small{display:block;font-size:8px;letter-spacing:4px;margin:6px 0 0 5px}
     .avatar{width:96px;height:96px;margin:0 auto 12px;position:relative}
     .avatar:before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 210deg,#d7be83,#f3e6c4,#bc9a52,#e8d9ae,#d7be83);filter:blur(.4px);z-index:0}
@@ -40,7 +39,7 @@
     .sub{color:var(--muted);font-size:13px;max-width:330px;margin:7px auto 0}
     /* бегущая строка */
     .ticker{margin:14px 0 0;background:linear-gradient(90deg,var(--deep2),var(--deep) 30% 70%,var(--deep2));color:#e9dfc4;overflow:hidden;white-space:nowrap;padding:9px 0;box-shadow:inset 0 1px 0 #ffffff14,inset 0 -1px 0 #00000030}
-    .ticker-track{display:inline-block;animation:tick 28s linear infinite;will-change:transform}
+    .ticker-track{display:inline-block;animation:tick 30s linear infinite;will-change:transform}
     .ticker span{display:inline-block;padding:0 18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
     .ticker b{color:var(--gold-soft)}
     @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -55,9 +54,6 @@
     .chip3d{width:34px;height:34px;flex:none;filter:drop-shadow(0 4px 6px #17352b2e)}
     .tile.dark{background:linear-gradient(160deg,#1d4038,#122e27);border-color:#ffffff22;color:#f2f0e6;box-shadow:0 10px 22px #0f2a2450,inset 0 1px 0 #ffffff1c}
     .tile.dark span{color:#c4d1ca}
-    .tile.gold{grid-column:1/-1;background:linear-gradient(160deg,#cfa95e,#ab8a41);border-color:#ffffff44;color:#fff;flex-direction:row;align-items:center;gap:12px;box-shadow:0 12px 26px #8a6d3145,inset 0 1px 0 #ffffff50}
-    .tile.gold b{font-size:17.5px}
-    .tile.gold span{color:#fdf3dd;flex:1}
     /* низ */
     .bottom{padding:4px 18px calc(14px + env(safe-area-inset-bottom))}
     .wa{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(165deg,#2a4b41,#16352e 60%,#0f2a24);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:900;box-shadow:0 12px 26px #19352a3d,inset 0 1px 0 #ffffff2a}
@@ -90,36 +86,27 @@
     /* карточка продукта */
     .p-hero{text-align:center;padding:4px 0 12px}
     .p-hero img{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 14px 16px #17352b26)}
-    .p-price{display:flex;gap:10px;margin:4px 0 14px}
-    .p-price div{flex:1;border-radius:16px;padding:11px 12px;text-align:center}
-    .p-price .old{background:#f2f4ee;color:var(--muted)}
-    .p-price .new{background:linear-gradient(160deg,#cfa95e,#ab8a41);color:#fff;box-shadow:0 8px 18px #8a6d3140,inset 0 1px 0 #ffffff50}
-    .p-price small{display:block;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;font-weight:900;margin-bottom:3px;opacity:.75}
-    .p-price b{font-size:17px}
-    .p-price .old b{text-decoration:line-through;font-weight:700}
-    .p-note{font-size:11px;color:#96a09a;margin:10px 0 0;text-align:center}
+    /* доставка */
+    .dlv{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
+    .dlv:last-of-type{margin-bottom:0}
+    .dlv .chip3d{width:40px;height:40px}
+    .dlv b{font-family:Lora,serif;font-size:16.5px;font-weight:600;display:block;margin-bottom:3px}
+    .dlv span{font-size:13px;color:var(--muted);line-height:1.45}
     /* анкета */
     .field{margin-bottom:12px}
     .field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:var(--muted);margin-bottom:5px}
     .field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:15px;color:var(--ink);background:#fff;box-shadow:inset 0 2px 4px #17352b0a}
     .field input:focus,.field select:focus{outline:2px solid var(--gold-soft);border-color:var(--gold)}
+    .field .hint{font-size:11px;color:#96a09a;margin-top:5px;line-height:1.4;text-transform:none;letter-spacing:0;font-weight:400}
     .send-hint{font-size:11.5px;color:#96a09a;margin:10px 0 0;text-align:center}
     /* кнопки в шторках */
-    .btn{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;border-radius:999px;padding:14px 20px;font-weight:900;font-size:14.5px}
+    .btn{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;border-radius:999px;padding:14px 20px;font-weight:900;font-size:14.5px;border:0;width:100%;font-family:inherit;cursor:pointer}
     .btn.solid{background:linear-gradient(165deg,#2a4b41,#16352e 60%,#0f2a24);color:#fff;box-shadow:0 8px 18px #19352a30,inset 0 1px 0 #ffffff2a}
-    .btn.line{background:#fff;color:var(--ink);border:1.5px solid var(--line);margin-top:10px}
+    .btn.goldb{background:linear-gradient(160deg,#cfa95e,#ab8a41);color:#fff;box-shadow:0 8px 18px #8a6d3140,inset 0 1px 0 #ffffff50;margin-top:10px}
     .trust{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px}
     .trust div{background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:14px;padding:10px 6px;text-align:center;font-size:10.5px;line-height:1.4;color:var(--muted);box-shadow:inset 0 1px 0 #fff}
     .trust b{display:block;font-family:Lora,serif;font-size:15px;color:var(--ink);margin-bottom:2px}
     .chip{display:inline-block;margin-top:4px;padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:11.5px;color:var(--muted)}
-    table{width:100%;border-collapse:collapse;font-size:13.5px}
-    th{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:900;padding:0 6px 8px;text-align:right}
-    th:first-child{text-align:left}
-    td{padding:11px 6px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
-    td:first-child{text-align:left;white-space:normal;font-weight:700}
-    td s{color:#a3aca7}
-    td b{color:var(--gold);font-size:14.5px}
-    .note{font-size:11px;color:#96a09a;margin-top:12px}
     ol{padding:0;margin:0 0 16px;list-style:none}
     ol li{padding:11px 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:14px;font-weight:700;font-size:14.5px}
     ol li:first-child{border-top:0}
@@ -148,14 +135,14 @@
     </header>
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track">
-      <span>Идиома Атоми на 2026 год — <b>мгновенные решения и полная концентрация</b></span><span>✦</span>
-      <span><b>Absolute Quality, Absolute Price</b> — абсолютное качество по честной цене</span><span>✦</span>
+      <span>Слоган Atomy на 2026 год — <b>Speed of Decision &amp; Absolute Immersion</b> — «Скорость принятия решений и абсолютное погружение»</span><span>✦</span>
+      <span><b>Absolute Quality, Absolute Price</b> — абсолютное качество по абсолютной цене</span><span>✦</span>
       <span>Южная Корея · с 2009 года · миллионы клиентов по всему миру</span><span>✦</span>
-      <span>Регистрация бесплатная — <b>0 ₸</b></span><span>✦</span>
-      <span>Идиома Атоми на 2026 год — <b>мгновенные решения и полная концентрация</b></span><span>✦</span>
-      <span><b>Absolute Quality, Absolute Price</b> — абсолютное качество по честной цене</span><span>✦</span>
+      <span><b>Регистрация бесплатная</b></span><span>✦</span>
+      <span>Слоган Atomy на 2026 год — <b>Speed of Decision &amp; Absolute Immersion</b> — «Скорость принятия решений и абсолютное погружение»</span><span>✦</span>
+      <span><b>Absolute Quality, Absolute Price</b> — абсолютное качество по абсолютной цене</span><span>✦</span>
       <span>Южная Корея · с 2009 года · миллионы клиентов по всему миру</span><span>✦</span>
-      <span>Регистрация бесплатная — <b>0 ₸</b></span><span>✦</span>
+      <span><b>Регистрация бесплатная</b></span><span>✦</span>
     </div></div>
 
     <nav class="grid">
@@ -163,21 +150,17 @@
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 24c-4-1.5-6-4.6-6-8 0-1.4.3-2.6.8-3.7C15 13.6 19.6 15 21.6 19c-1.2-4.5-4.7-6.6-8.7-7.2 1.5-1.6 3.6-2.5 6.1-2.5.5 2 .9 4.4 4 5.4-.4 5-2.4 8-6 9.3z" fill="#d7be83"/></svg>
         <b>Продукты</b><span>Моя подборка из 5 — нажмите на любой</span>
       </button>
-      <button class="tile" data-m="m-prices">
-        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M10 12.5 15.5 9l8.5 6.5-1 9.5H12l-2-12.5z" fill="#fffdf8" opacity=".92"/><circle cx="15.4" cy="13.4" r="1.6" fill="#bc9a52"/><path d="m13.5 21 6-6" stroke="#bc9a52" stroke-width="1.6" stroke-linecap="round"/><circle cx="19" cy="20.5" r="1.2" fill="#bc9a52"/></svg>
-        <b>Две цены</b><span>Сколько экономит бесплатная регистрация</span>
+      <button class="tile" data-m="m-delivery">
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M7 12h11v10H7z" fill="#fffdf8" opacity=".95"/><path d="M18 15h4.5l3 3.2V22H18v-7z" fill="#fffdf8" opacity=".85"/><circle cx="11.5" cy="23" r="2.1" fill="#96762f"/><circle cx="22.5" cy="23" r="2.1" fill="#96762f"/><circle cx="11.5" cy="23" r=".9" fill="#e6cd93"/><circle cx="22.5" cy="23" r=".9" fill="#e6cd93"/></svg>
+        <b>Доставка</b><span>Бесплатно до центра вашего города</span>
       </button>
       <button class="tile" data-m="m-reg">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="14" cy="14" r="4.6" fill="none" stroke="#d7be83" stroke-width="2.4"/><path d="m17.4 17.4 6.2 6.2M21 21.5l2.4-2.3M23.6 24l2-2" stroke="#d7be83" stroke-width="2.4" stroke-linecap="round"/></svg>
-        <b>Регистрация</b><span>3 простых шага к ценам участника</span>
+        <b>Регистрация</b><span>Простые шаги к ценам участника</span>
       </button>
       <button class="tile dark" data-m="m-about">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 25.5c-4.8-3-8-5.8-8-9.3 0-2.4 1.9-4.2 4.2-4.2 1.6 0 3 .9 3.8 2.2.8-1.3 2.2-2.2 3.8-2.2 2.3 0 4.2 1.8 4.2 4.2 0 3.5-3.2 6.3-8 9.3z" fill="#fffdf8" opacity=".95"/></svg>
         <b>Обо мне</b><span>Кто я и почему Atomy</span>
-      </button>
-      <button class="tile gold" data-m="m-form">
-        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><rect x="9" y="8" width="13" height="17" rx="2.5" fill="#fffdf8" opacity=".95"/><path d="M12 12.5h7M12 16h7M12 19.5h4.5" stroke="#bc9a52" stroke-width="1.7" stroke-linecap="round"/><path d="m20.5 23.5 5.5-5.5 1.8 1.8-5.5 5.5-2.4.6.6-2.4z" fill="#d7be83" stroke="#96762f" stroke-width=".7"/></svg>
-        <b>Анкета на регистрацию</b><span>Заполните — и вас зарегистрируют в Atomy</span>
       </button>
     </nav>
 
@@ -193,7 +176,7 @@
     <div class="sheet">
       <div class="sheet-head"><h2 id="t-products">Любимые продукты</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <p style="margin-bottom:6px">Нажмите на продукт — откроется описание и цены.</p>
+        <p style="margin-bottom:6px">Нажмите на продукт — откроется описание.</p>
         <button class="prod" data-m="p-hemohim"><img src="assets/hemohim.webp" alt=""><div><b>ХемоХИМ</b><span>Фирменный комплекс №1 в Atomy</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-noni"><img src="assets/noni.webp" alt=""><div><b>Концентрат Нони</b><span>Ферментированные плоды нони</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-probiotic"><img src="assets/probiotic.webp" alt=""><div><b>Пробиотик 10+</b><span>Комфорт пищеварения каждый день</span></div><span class="go">→</span></button>
@@ -204,17 +187,17 @@
     </div>
   </div>
 
-  <!-- ═══ КАРТОЧКИ ПРОДУКТОВ (цены atomy.kz, июль 2026) ═══ -->
+  <!-- ═══ КАРТОЧКИ ПРОДУКТОВ ═══ -->
   <div class="modal" id="p-hemohim" role="dialog" aria-modal="true" aria-labelledby="tp-hemohim">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
       <div class="sheet-head"><h2 id="tp-hemohim">Атоми ХемоХИМ</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/hemohim.webp" alt="ХемоХИМ"></div>
-        <p>Фирменный продукт №1 компании: комплекс на основе экстрактов дягиля, володушки и пиона, созданный корейскими учёными. Как пишет официальный магазин — «здоровая энергия каждый день»: для тонуса, бодрости и поддержки иммунитета. Больше 2 800 заказов в Казахстане, рейтинг 4.6.</p>
-        <div class="p-price"><div class="old"><small>Без регистрации</small><b>66 300 ₸</b></div><div class="new"><small>Цена участника</small><b>51 000 ₸</b></div></div>
-        <a class="btn solid" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%20%D0%A5%D0%B5%D0%BC%D0%BE%D0%A5%D0%98%D0%9C" target="_blank" rel="noopener">Спросить в WhatsApp <span>→</span></a>
-        <p class="p-note">Цены — официальный магазин atomy.kz, июль 2026</p>
+        <p>Фирменный продукт №1 компании Atomy, разработанный корейскими учёными в сотрудничестве с Институтом атомной энергии Кореи. В основе — экстракты трёх растений: корня дягиля, володушки и белого пиона.</p>
+        <p>Официальный магазин описывает его так: «здоровая энергия каждый день» — для тонуса, бодрости и поддержки иммунитета. Внутри коробки — порционные пакетики с мягким травяным вкусом, которые удобно брать с собой: один пакетик в день, курсом.</p>
+        <p>Это один из самых известных продуктов Atomy в мире — в Казахстане у него больше 2 800 заказов и рейтинг 4.6 в официальном магазине.</p>
+        <a class="btn solid" href="https://www.atomy.kz/product/F00101" target="_blank" rel="noopener">Смотреть на atomy.kz <span>→</span></a>
       </div>
     </div>
   </div>
@@ -225,10 +208,9 @@
       <div class="sheet-head"><h2 id="tp-noni">Ферментированный концентрат Нони</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/noni.webp" alt="Нони"></div>
-        <p>Концентрат плодов нони двойной ферментации в удобных стиках. Мягкая ежедневная привычка для бодрого начала дня — удобно взять с собой куда угодно.</p>
-        <div class="p-price"><div class="old"><small>Без регистрации</small><b>42 300 ₸</b></div><div class="new"><small>Цена участника</small><b>32 500 ₸</b></div></div>
-        <a class="btn solid" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%20%D0%BA%D0%BE%D0%BD%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B0%D1%82%20%D0%9D%D0%BE%D0%BD%D0%B8" target="_blank" rel="noopener">Спросить в WhatsApp <span>→</span></a>
-        <p class="p-note">Цены — официальный магазин atomy.kz, июль 2026</p>
+        <p>Концентрат плодов нони — тропического фрукта, который веками ценится в Юго-Восточной Азии и Полинезии. В отличие от обычного сока, здесь плоды проходят двойную ферментацию: вкус становится мягче, а полезные вещества усваиваются легче.</p>
+        <p>Формат — удобные порционные стики: можно развести в стакане воды или выпить как есть. Один стик утром — простая ежедневная привычка для бодрого начала дня, которую легко взять с собой в дорогу, на работу или в путешествие.</p>
+        <a class="btn solid" href="https://www.atomy.kz/product/F00120" target="_blank" rel="noopener">Смотреть на atomy.kz <span>→</span></a>
       </div>
     </div>
   </div>
@@ -239,10 +221,9 @@
       <div class="sheet-head"><h2 id="tp-probiotic">Атоми Пробиотик 10+</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/probiotic.webp" alt="Пробиотик 10+"></div>
-        <p>Полезные бактерии и пребиотики в одном стике — для комфортного пищеварения каждый день. Не требует холодильника, приятный вкус, подходит всей семье.</p>
-        <div class="p-price"><div class="old"><small>Без регистрации</small><b>21 500 ₸</b></div><div class="new"><small>Цена участника</small><b>16 500 ₸</b></div></div>
-        <a class="btn solid" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%20%D0%9F%D1%80%D0%BE%D0%B1%D0%B8%D0%BE%D1%82%D0%B8%D0%BA%2010%2B" target="_blank" rel="noopener">Спросить в WhatsApp <span>→</span></a>
-        <p class="p-note">Цены — официальный магазин atomy.kz, июль 2026</p>
+        <p>Комплекс полезных бактерий с пребиотиками в порционных стиках. В каждом стике — миллиарды живых лактобактерий, которые поддерживают баланс микрофлоры и комфортное пищеварение каждый день.</p>
+        <p>Порошок с приятным вкусом можно принимать без воды, а упаковка не требует холодильника — удобно и дома, и в поездке. Подходит взрослым и детям; многие семьи держат его в ежедневном наборе рядом с витаминами.</p>
+        <a class="btn solid" href="https://www.atomy.kz/product/F00164" target="_blank" rel="noopener">Смотреть на atomy.kz <span>→</span></a>
       </div>
     </div>
   </div>
@@ -253,10 +234,9 @@
       <div class="sheet-head"><h2 id="tp-vitaminc">Атоми Витамин C</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/vitaminc.webp" alt="Витамин C"></div>
-        <p>Витамин C в порционных стиках с приятным цитрусовым вкусом — яркая поддержка иммунитета для взрослых и детей. Удобно в дорогу, на работу и в школу.</p>
-        <div class="p-price"><div class="old"><small>Без регистрации</small><b>16 000 ₸</b></div><div class="new"><small>Цена участника</small><b>12 300 ₸</b></div></div>
-        <a class="btn solid" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%20%D0%92%D0%B8%D1%82%D0%B0%D0%BC%D0%B8%D0%BD%20C" target="_blank" rel="noopener">Спросить в WhatsApp <span>→</span></a>
-        <p class="p-note">Цены — официальный магазин atomy.kz, июль 2026</p>
+        <p>Витамин C в порционных стиках с ярким цитрусовым вкусом — ежедневная поддержка иммунитета для взрослых и детей. Каждый стик — готовая порция, ничего не нужно отмерять.</p>
+        <p>Порошок приятно тает во рту, и его можно принимать даже без воды: удобно на работе, в школе, в дороге. Коробки хватает надолго, поэтому его часто берут сразу на всю семью — особенно в сезон простуд.</p>
+        <a class="btn solid" href="https://www.atomy.kz/product/F00121" target="_blank" rel="noopener">Смотреть на atomy.kz <span>→</span></a>
       </div>
     </div>
   </div>
@@ -267,31 +247,27 @@
       <div class="sheet-head"><h2 id="tp-arabica">Атоми Кофе Арабика</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/arabica.webp" alt="Кофе Арабика"></div>
-        <p>Мягкий растворимый кофе из зёрен арабики — 50 стиков в коробке. Один из самых заказываемых продуктов Atomy в Казахстане: удобно дома, на работе и в гостях.</p>
-        <div class="p-price"><div class="old"><small>Без регистрации</small><b>8 600 ₸</b></div><div class="new"><small>Цена участника</small><b>6 600 ₸</b></div></div>
-        <a class="btn solid" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A0%D0%B0%D1%81%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%20%D0%BF%D1%80%D0%BE%20%D0%9A%D0%BE%D1%84%D0%B5%20%D0%90%D1%80%D0%B0%D0%B1%D0%B8%D0%BA%D0%B0" target="_blank" rel="noopener">Спросить в WhatsApp <span>→</span></a>
-        <p class="p-note">Цены — официальный магазин atomy.kz, июль 2026</p>
+        <p>Растворимый кофе из зёрен 100% арабики — мягкий сбалансированный вкус без горечи и лишней кислинки. В коробке 50 порционных стиков: один стик — одна чашка, ничего отмерять не нужно.</p>
+        <p>Это один из самых заказываемых продуктов Atomy в Казахстане: его выбирают для дома, офиса и для гостей. Компактные стики удобно держать на работе или взять с собой в дорогу.</p>
+        <a class="btn solid" href="https://www.atomy.kz/product/F00973" target="_blank" rel="noopener">Смотреть на atomy.kz <span>→</span></a>
       </div>
     </div>
   </div>
 
-  <!-- ═══ ЦЕНЫ ═══ -->
-  <div class="modal" id="m-prices" role="dialog" aria-modal="true" aria-labelledby="t-prices">
+  <!-- ═══ ДОСТАВКА ═══ -->
+  <div class="modal" id="m-delivery" role="dialog" aria-modal="true" aria-labelledby="t-delivery">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-prices">Одни продукты — две цены</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-delivery">Доставка</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <p>После бесплатной регистрации магазин открывает цены участника. Бестселлеры из официального магазина:</p>
-        <table>
-          <tr><th></th><th>Без регистрации</th><th>Участник</th></tr>
-          <tr><td>Кофе Арабика, 50 шт</td><td><s>8 600 ₸</s></td><td><b>6 600 ₸</b></td></tr>
-          <tr><td>Зубная паста, 4 шт</td><td><s>4 500 ₸</s></td><td><b>3 400 ₸</b></td></tr>
-          <tr><td>Витамин C</td><td><s>16 000 ₸</s></td><td><b>12 300 ₸</b></td></tr>
-          <tr><td>Пробиотик 10+</td><td><s>21 500 ₸</s></td><td><b>16 500 ₸</b></td></tr>
-          <tr><td>Концентрат Нони</td><td><s>42 300 ₸</s></td><td><b>32 500 ₸</b></td></tr>
-          <tr><td>ХемоХИМ</td><td><s>66 300 ₸</s></td><td><b>51 000 ₸</b></td></tr>
-        </table>
-        <p class="note">Цены официального магазина atomy.kz, июль 2026 — перед заказом уточняйте актуальные. При заказе от 65 000 ₸ доставка бесплатная.</p>
+        <div class="dlv">
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
+          <div><b>До центра вашего города — бесплатно</b><span>Заказ приезжает в центр Atomy в вашем городе, забрать можно в удобное время.</span></div>
+        </div>
+        <div class="dlv">
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 16.5 17 9l8 7.5V25H9v-8.5z" fill="#fffdf8" opacity=".95"/><path d="M14.5 25v-5.5h5V25" fill="#bc9a52"/></svg>
+          <div><b>До квартиры — бесплатно от 65 000 ₸</b><span>При заказе от 65 000 тенге курьер бесплатно привезёт всё прямо до двери.</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -303,12 +279,12 @@
       <div class="sheet-head"><h2 id="t-reg">Как получить доступ</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <ol>
-          <li><b>01</b><span>Зарегистрируйтесь бесплатно — это 10 минут</span></li>
+          <li><b>01</b><span>Зарегистрируйтесь бесплатно</span></li>
           <li><b>02</b><span>Войдите в личный кабинет на atomy.kz</span></li>
           <li><b>03</b><span>Покупайте напрямую по ценам участника</span></li>
         </ol>
         <a class="btn solid" href="https://docs.google.com/document/d/1sNWt25Ojme9ZibZAC9E_V0MietKyM7kJD5NgF5GZTNI/edit?usp=sharing" target="_blank" rel="noopener">Қазақстан — тіркелу нұсқаулығы <span>→</span></a>
-        <a class="btn line" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D1%80%D0%B5%D0%B3%D0%B8%D1%81%D1%82%D1%80%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%B2%20Atomy" target="_blank" rel="noopener">Другая страна — напишите мне <span>→</span></a>
+        <button class="btn goldb" data-m="m-form">Анкета на регистрацию <span>→</span></button>
         <div class="trust">
           <div><b>KR</b>Южная Корея, с 2009 года</div>
           <div><b>✓</b>Официальный магазин atomy.kz</div>
@@ -341,14 +317,22 @@
       <div class="sheet-head"><h2 id="t-form">Анкета на регистрацию</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <p>Заполните анкету — она отправится в WhatsApp, и вас зарегистрируют в Atomy и помогут с первым заказом.</p>
-        <div class="field"><label for="f-name">Имя и фамилия</label><input id="f-name" autocomplete="off" placeholder="Например: Айгуль Сериковна"></div>
+        <div class="field"><label for="f-name">Фамилия, имя, отчество — полностью</label><input id="f-name" autocomplete="off" placeholder="Например: Ахметова Айгуль Сериковна"></div>
         <div class="field"><label for="f-phone">Телефон / WhatsApp</label><input id="f-phone" autocomplete="off" inputmode="tel" placeholder="+7 ___ ___ __ __"></div>
         <div class="field"><label for="f-country">Страна</label>
           <select id="f-country">
-            <option>Казахстан</option><option>Россия</option><option>Кыргызстан</option><option>Узбекистан</option><option>Другая страна</option>
+            <option>Казахстан</option><option>Россия</option><option>Кыргызстан</option><option>Узбекистан</option>
+            <option>Азербайджан</option><option>Армения</option><option>Беларусь</option><option>Грузия</option>
+            <option>Монголия</option><option>Таджикистан</option><option>Турция</option><option>ОАЭ</option>
+            <option>Южная Корея</option><option>США</option><option>Другая страна</option>
           </select>
         </div>
+        <div class="field" id="f-other-wrap" style="display:none"><label for="f-other">Укажите вашу страну</label><input id="f-other" autocomplete="off" placeholder="Например: Германия"></div>
         <div class="field"><label for="f-city">Город</label><input id="f-city" autocomplete="off" placeholder="Например: Алматы"></div>
+        <div class="field"><label for="f-birth">Дата рождения</label><input id="f-birth" autocomplete="off" inputmode="numeric" placeholder="ДД.ММ.ГГГГ"></div>
+        <div class="field"><label for="f-iin">ИИН — по желанию</label><input id="f-iin" autocomplete="off" inputmode="numeric" placeholder="12 цифр (можно оставить пустым)">
+          <div class="hint">ИИН не обязателен: он нужен только тем, кто хочет вести бизнес и накапливать баллы для заработка в Atomy. Для обычных покупок достаточно даты рождения.</div>
+        </div>
         <a class="btn solid" id="f-send" href="https://wa.me/77013130206" target="_blank" rel="noopener">Отправить анкету <span>→</span></a>
         <p class="send-hint">Откроется WhatsApp с готовым сообщением — останется нажать «Отправить»</p>
       </div>
@@ -359,16 +343,24 @@
     (function(){
       // анкета → готовое сообщение в WhatsApp
       var send = document.getElementById('f-send');
+      var country = document.getElementById('f-country');
+      var otherWrap = document.getElementById('f-other-wrap');
+      function val(id){ return (document.getElementById(id).value || '').trim(); }
       function upd(){
-        var v = function(id){ return (document.getElementById(id).value || '—').trim() || '—'; };
-        var text = 'Здравствуйте! Хочу зарегистрироваться в Atomy.\n'
-          + 'Имя: ' + v('f-name') + '\n'
-          + 'Телефон: ' + v('f-phone') + '\n'
-          + 'Страна: ' + v('f-country') + '\n'
-          + 'Город: ' + v('f-city');
-        send.href = 'https://wa.me/77013130206?text=' + encodeURIComponent(text);
+        var c = country.value === 'Другая страна' ? (val('f-other') || 'Другая страна') : country.value;
+        otherWrap.style.display = country.value === 'Другая страна' ? '' : 'none';
+        var lines = [
+          'Здравствуйте! Хочу зарегистрироваться в Atomy.',
+          'ФИО: ' + (val('f-name') || '—'),
+          'Телефон: ' + (val('f-phone') || '—'),
+          'Страна: ' + c,
+          'Город: ' + (val('f-city') || '—'),
+          'Дата рождения: ' + (val('f-birth') || '—')
+        ];
+        if (val('f-iin')) lines.push('ИИН: ' + val('f-iin'));
+        send.href = 'https://wa.me/77013130206?text=' + encodeURIComponent(lines.join('\n'));
       }
-      ['f-name','f-phone','f-country','f-city'].forEach(function(id){
+      ['f-name','f-phone','f-country','f-other','f-city','f-birth','f-iin'].forEach(function(id){
         var el = document.getElementById(id);
         el.addEventListener('input', upd);
         el.addEventListener('change', upd);
