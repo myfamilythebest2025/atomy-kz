@@ -54,6 +54,16 @@
     .chip3d{width:34px;height:34px;flex:none;filter:drop-shadow(0 4px 6px #17352b2e)}
     .tile.dark{background:linear-gradient(160deg,#1d4038,#122e27);border-color:#ffffff22;color:#f2f0e6;box-shadow:0 10px 22px #0f2a2450,inset 0 1px 0 #ffffff1c}
     .tile.dark span{color:#c4d1ca}
+    .tile.map-tile{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px;background:linear-gradient(160deg,#f4f1e6,#e9e2cd);border-color:#ffffffdd}
+    .tile.map-tile b{font-size:17px}
+    .tile.map-tile span{flex:1}
+    /* карта */
+    .map-wrap{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px #17352b22;margin-bottom:14px;background:#e9efe7}
+    .map-wrap iframe{display:block;width:100%;height:240px;border:0}
+    .addr{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:14px 16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
+    .addr b{font-family:Lora,serif;font-size:16px;font-weight:600;display:block;margin-bottom:3px}
+    .addr span{font-size:12.5px;color:var(--muted);line-height:1.45}
+    .addr .star{color:var(--gold);font-weight:900}
     /* низ */
     .bottom{padding:4px 18px calc(14px + env(safe-area-inset-bottom))}
     .wa{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(165deg,#2a4b41,#16352e 60%,#0f2a24);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:900;box-shadow:0 12px 26px #19352a3d,inset 0 1px 0 #ffffff2a}
@@ -162,6 +172,10 @@
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 25.5c-4.8-3-8-5.8-8-9.3 0-2.4 1.9-4.2 4.2-4.2 1.6 0 3 .9 3.8 2.2.8-1.3 2.2-2.2 3.8-2.2 2.3 0 4.2 1.8 4.2 4.2 0 3.5-3.2 6.3-8 9.3z" fill="#fffdf8" opacity=".95"/></svg>
         <b>Обо мне</b><span>Кто я и почему Atomy</span>
       </button>
+      <button class="tile map-tile" data-m="m-map">
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
+        <div><b>Где нас найти</b><span>Актау, 5-й микрорайон, 14/2 · центр Atomy Altyn-Arman — карта и маршрут</span></div>
+      </button>
     </nav>
 
     <div class="bottom">
@@ -268,6 +282,26 @@
           <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 16.5 17 9l8 7.5V25H9v-8.5z" fill="#fffdf8" opacity=".95"/><path d="M14.5 25v-5.5h5V25" fill="#bc9a52"/></svg>
           <div><b>До квартиры — бесплатно от 65 000 ₸</b><span>При заказе от 65 000 тенге курьер бесплатно привезёт всё прямо до двери.</span></div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ГДЕ НАС НАЙТИ ═══ -->
+  <div class="modal" id="m-map" role="dialog" aria-modal="true" aria-labelledby="t-map">
+    <div class="modal-bg" data-close></div>
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="t-map">Где нас найти</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-body">
+        <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=43.640398,51.161271&z=17&hl=ru&output=embed" loading="lazy" title="Карта: центр Atomy Altyn-Arman, Актау" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="addr">
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
+          <div>
+            <b>Центр Atomy Altyn-Arman <span class="star">★ 4.8</span></b>
+            <span>Актау, 5-й микрорайон, 14/2 — административное здание, 1 этаж.<br>Приём по предварительной записи: пн–сб, с 12:00. Здесь можно забрать заказ, посмотреть продукцию вживую и задать вопросы.</span>
+          </div>
+        </div>
+        <a class="btn solid" href="https://2gis.kz/aktau/inside/70030076138753224/firm/70000001078996125?m=51.161271%2C43.640398%2F20" target="_blank" rel="noopener">Открыть в 2ГИС и построить маршрут <span>→</span></a>
+        <a class="btn goldb" href="https://wa.me/77013130206?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BD%D0%B0%20%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D1%83%20%D0%B2%20%D1%86%D0%B5%D0%BD%D1%82%D1%80%D0%B5%20Atomy" target="_blank" rel="noopener">Записаться в WhatsApp <span>→</span></a>
       </div>
     </div>
   </div>
