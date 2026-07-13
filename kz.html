@@ -11,67 +11,62 @@
   <!--
     КОМПАКТНАЯ версия лендинга: один экран, разделы и продукты — всплывающими окнами.
     МЕСТА ДЛЯ ДАННЫХ МАМЫ:
-    1. Фото: assets/magda-photo.jpg, раскомментировать <img> в .avatar.
+    1. Фото для первого экрана: assets/magda-hero.jpg.
     2. «[N лет]» в окне «Обо мне».
   -->
   <style>
-    :root{--ink:#203d35;--deep:#16352e;--deep2:#0f2a24;--gold:#bc9a52;--gold2:#a3823c;--gold-soft:#d7be83;--cream:#f7f4ec;--paper:#fffdf8;--line:#e5ddd0;--muted:#65736d;--atomy:#14aee2}
+    :root{--ink:#123e58;--deep:#087cb2;--deep2:#00618e;--gold:#0b91ca;--gold2:#0872a4;--gold-soft:#9edff5;--cream:#f1faff;--paper:#ffffff;--line:#cde8f2;--muted:#4b6e7e;--atomy:#14aee2}
     *{box-sizing:border-box}
     html,body{margin:0;height:100%}
     body{background:var(--cream);color:var(--ink);font-family:Lato,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.5}
-    .app{max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:
-      radial-gradient(circle at 50% 10%,#e0f2ec 0 14%,transparent 44%),
-      radial-gradient(circle at 12% 46%,#f3ecd9 0 8%,transparent 26%),
-      linear-gradient(165deg,#fdfcf7,#eef4ef)}
+    .app{position:relative;isolation:isolate;max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:#eaf8fe url("assets/magda-hero.jpg") center top/cover no-repeat}
     /* шапка */
-    .top{text-align:center;padding:20px 22px 4px}
-    .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:900;margin:0 0 10px}
-    .brand{font-size:26px;line-height:.8;letter-spacing:-1.5px;color:var(--atomy);font-weight:900;margin:0 0 14px;text-shadow:0 2px 6px #14aee226}
-    .brand span{font-size:31px;vertical-align:baseline;margin-left:1px;letter-spacing:0}
+    .top{position:relative;isolation:isolate;overflow:hidden;min-height:390px;display:flex;flex-direction:column;text-align:left;padding:16px 22px 18px}
+    .top>:not(.hero-photo){position:relative;z-index:1}
+    .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#e9f9ff;font-weight:900;margin:0 0 8px;text-shadow:0 1px 5px #063853}
+    .brand{display:table;font-size:26px;line-height:.8;letter-spacing:-1.5px;color:var(--atomy);font-weight:900;margin:0;text-shadow:0 1px 3px #ffffffcc;background:none;border:0;border-radius:0;padding:0;box-shadow:none}
+    .brand span{display:inline-block;font-size:19px;line-height:1;vertical-align:-.02em;transform:translateY(-1px);margin-left:2px;letter-spacing:0}
     /* переключатель языков */
-    .lang{display:flex;gap:6px;justify-content:center;margin:0 0 10px}
+    .lang{display:flex;align-self:flex-end;gap:6px;justify-content:center;margin:0 0 10px}
     .lang a{font-size:10.5px;font-weight:900;letter-spacing:.08em;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:5px 11px;background:#ffffffaa}
     .lang a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
     .brand small{display:block;font-size:8px;letter-spacing:4px;margin:6px 0 0 5px}
-    .avatar{width:96px;height:96px;margin:0 auto 12px;position:relative}
-    .avatar:before{content:"";position:absolute;inset:-6px;border-radius:50%;background:conic-gradient(from 210deg,#d7be83,#f3e6c4,#bc9a52,#e8d9ae,#d7be83);filter:blur(.4px);z-index:0}
-    .avatar>*{position:relative;z-index:1}
-    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #fff;box-shadow:0 12px 26px #17352b30}
-    .avatar-ph{width:100%;height:100%;border-radius:50%;border:2px dashed #fff;background:linear-gradient(160deg,#fdf9ef,#f4ead2);color:var(--gold2);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;font-weight:700;line-height:1.3;box-shadow:inset 0 2px 8px #bc9a5226}
-    h1{font-family:Lora,Georgia,serif;font-weight:600;font-size:23px;line-height:1.2;letter-spacing:-.02em;margin:0}
-    h1 em{font-style:italic;color:var(--gold)}
-    .sub{color:var(--muted);font-size:13px;max-width:330px;margin:7px auto 0}
+    .hero-photo{display:none}
+    .top:after{display:none}
+    h1{position:relative;z-index:1;font-family:Lora,Georgia,serif;font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.02em;color:#fff;text-shadow:0 2px 10px #063853;margin:auto 0 0;max-width:235px;min-height:76px}
+    h1 em{font-style:italic;color:#c6efff}
+    .sub{position:relative;z-index:1;color:#f4fcff;font-size:13px;line-height:1.45;max-width:235px;min-height:38px;margin:7px 0 0;text-shadow:0 1px 6px #063853}
     /* бегущая строка */
-    .ticker{margin:14px 0 0;background:linear-gradient(90deg,var(--deep2),var(--deep) 30% 70%,var(--deep2));color:#e9dfc4;overflow:hidden;white-space:nowrap;padding:9px 0;box-shadow:inset 0 1px 0 #ffffff14,inset 0 -1px 0 #00000030}
+    .ticker{display:block;margin:0;background:linear-gradient(90deg,var(--deep2),var(--deep) 30% 70%,var(--deep2));color:#e9f9ff;overflow:hidden;white-space:nowrap;padding:9px 0;box-shadow:inset 0 1px 0 #ffffff35,inset 0 -1px 0 #00517055}
     .ticker-track{display:inline-block;animation:tick 30s linear infinite;will-change:transform}
     .ticker span{display:inline-block;padding:0 18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
     .ticker b{color:var(--gold-soft)}
     @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
     @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
     /* сетка разделов */
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px;flex:1;align-content:center}
-    .tile{position:relative;background:linear-gradient(160deg,#ffffff,#f6f8f3);border:1px solid #ffffffcc;border-radius:20px;padding:13px 13px 11px;text-align:left;cursor:pointer;box-shadow:0 10px 22px #173b3114,inset 0 1px 0 #fff;font-family:inherit;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:transform .15s,box-shadow .15s}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 18px;flex:1;align-content:center;background:#f5fbfecc}
+    .tile{position:relative;background:#fffffff2;border:1px solid #d9edf5;border-radius:20px;padding:13px 13px 11px;text-align:left;cursor:pointer;box-shadow:0 8px 18px #07517212,inset 0 1px 0 #fff;font-family:inherit;color:var(--ink);display:flex;flex-direction:column;gap:6px;transition:transform .15s,box-shadow .15s}
     .tile:active{transform:scale(.97)}
     .tile:hover{box-shadow:0 14px 28px #173b311e,inset 0 1px 0 #fff}
-    .tile b{font-family:Lora,serif;font-size:16.5px;font-weight:600}
-    .tile span{font-size:11.5px;color:var(--muted);line-height:1.35}
+    .tile b{font-family:Lora,serif;font-size:16px;font-weight:600;min-height:24px}
+    .tile span{font-size:11.5px;color:var(--muted);line-height:1.35;min-height:31px}
     .chip3d{width:34px;height:34px;flex:none;filter:drop-shadow(0 4px 6px #17352b2e)}
-    .tile.dark{background:linear-gradient(160deg,#1d4038,#122e27);border-color:#ffffff22;color:#f2f0e6;box-shadow:0 10px 22px #0f2a2450,inset 0 1px 0 #ffffff1c}
-    .tile.dark span{color:#c4d1ca}
-    .tile.map-tile{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px;background:linear-gradient(160deg,#f4f1e6,#e9e2cd);border-color:#ffffffdd}
+    .tile.dark{background:linear-gradient(160deg,#19b5ea,#087cb2 62%,#00618e);border-color:#ffffff77;color:#fff;box-shadow:0 8px 18px #00618e3b,inset 0 1px 0 #ffffff66}
+    .tile.dark span{color:#e1f7ff}
+    .tile.map-tile{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px;background:#fff;border-color:#d9edf5}
     .tile.map-tile div{flex:1}
     .tile.map-tile b{font-size:17px;display:block;margin-bottom:2px}
     /* карта */
     .map-wrap{display:block;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px #17352b22;margin-bottom:14px;background:#e9efe7;text-decoration:none}
     .map-wrap img{display:block;width:100%;height:auto}
-    .map-open{position:absolute;right:10px;bottom:10px;background:#16352ee6;color:#fff;font-size:11.5px;font-weight:900;padding:7px 12px;border-radius:999px;box-shadow:0 4px 10px #0f2a2440}
+    .map-open{position:absolute;right:10px;bottom:10px;background:#00618ee6;color:#fff;font-size:11.5px;font-weight:900;padding:7px 12px;border-radius:999px;box-shadow:0 4px 10px #00618e40}
     .addr{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:14px 16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .addr b{font-family:Lora,serif;font-size:16px;font-weight:600;display:block;margin-bottom:3px}
     .addr span{font-size:12.5px;color:var(--muted);line-height:1.45}
     .addr .star{color:var(--gold);font-weight:900}
     /* низ */
-    .bottom{padding:4px 18px calc(14px + env(safe-area-inset-bottom))}
-    .wa{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(165deg,#2a4b41,#16352e 60%,#0f2a24);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:900;box-shadow:0 12px 26px #19352a3d,inset 0 1px 0 #ffffff2a}
+    .bottom{padding:4px 18px calc(14px + env(safe-area-inset-bottom));background:#f5fbfecc}
+    .wa{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(165deg,#19b5ea,#087cb2 60%,#00618e);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:900;box-shadow:0 12px 26px #0574aa46,inset 0 1px 0 #ffffff55}
     .wa:active{transform:translateY(1px)}
     .wa-ic{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#4fe083,#25d366 60%,#17a94e);display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:900;box-shadow:0 2px 5px #0f2a2450}
     .free{font-size:11px;color:#86938e;text-align:center;margin:8px 0 0}
@@ -135,7 +130,7 @@
     .send-hint{font-size:11.5px;color:#96a09a;margin:10px 0 0;text-align:center}
     /* кнопки в шторках */
     .btn{display:flex;align-items:center;justify-content:space-between;gap:10px;text-decoration:none;border-radius:999px;padding:14px 20px;font-weight:900;font-size:14.5px;border:0;width:100%;font-family:inherit;cursor:pointer}
-    .btn.solid{background:linear-gradient(165deg,#2a4b41,#16352e 60%,#0f2a24);color:#fff;box-shadow:0 8px 18px #19352a30,inset 0 1px 0 #ffffff2a}
+    .btn.solid{background:linear-gradient(165deg,#19b5ea,#087cb2 60%,#00618e);color:#fff;box-shadow:0 8px 18px #0574aa30,inset 0 1px 0 #ffffff55}
     .btn.goldb{background:linear-gradient(160deg,#cfa95e,#ab8a41);color:#fff;box-shadow:0 8px 18px #8a6d3140,inset 0 1px 0 #ffffff50;margin-top:10px}
     .trust{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:16px}
     .trust div{background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:14px;padding:10px 6px;text-align:center;font-size:10.5px;line-height:1.4;color:var(--muted);box-shadow:inset 0 1px 0 #fff}
@@ -150,8 +145,8 @@
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
-      <linearGradient id="g-green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f5d50"/><stop offset=".55" stop-color="#16352e"/><stop offset="1" stop-color="#0f2a24"/></linearGradient>
-      <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e6cd93"/><stop offset=".5" stop-color="#bc9a52"/><stop offset="1" stop-color="#96762f"/></linearGradient>
+      <linearGradient id="g-green" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36bceb"/><stop offset=".55" stop-color="#087cb2"/><stop offset="1" stop-color="#00618e"/></linearGradient>
+      <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9ebfb"/><stop offset=".5" stop-color="#19b5ea"/><stop offset="1" stop-color="#087cb2"/></linearGradient>
       <linearGradient id="g-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
     </defs>
   </svg>
@@ -159,12 +154,9 @@
   <div class="app">
     <header class="top">
       <nav class="lang"><a class="on" href="kz.html">ҚАЗ</a><a href="index.html">РУС</a><a href="en.html">ENG</a></nav>
+      <div class="hero-photo" aria-hidden="true"><img src="assets/magda-hero.jpg" alt=""></div>
       <p class="eyebrow">— Atomy ресми серіктесі · Қазақстан —</p>
       <p class="brand">atom<span>美</span><small>ATOMY</small></p>
-      <div class="avatar" title="Место для фото">
-        <!-- <img src="assets/magda-photo.jpg" alt="Магда"> -->
-        <div class="avatar-ph">Магданың<br>фотосы</div>
-      </div>
       <h1>Өзіңе корейлік қамқорлық — <em>адал бағамен</em></h1>
       <p class="sub">Atomy өнімдерін делдалдардың үстемесінсіз тікелей сатып алуға көмектесемін.</p>
     </header>
@@ -182,7 +174,7 @@
 
     <nav class="grid">
       <button class="tile" data-m="m-products">
-        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 24c-4-1.5-6-4.6-6-8 0-1.4.3-2.6.8-3.7C15 13.6 19.6 15 21.6 19c-1.2-4.5-4.7-6.6-8.7-7.2 1.5-1.6 3.6-2.5 6.1-2.5.5 2 .9 4.4 4 5.4-.4 5-2.4 8-6 9.3z" fill="#d7be83"/></svg>
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 24c-4-1.5-6-4.6-6-8 0-1.4.3-2.6.8-3.7C15 13.6 19.6 15 21.6 19c-1.2-4.5-4.7-6.6-8.7-7.2 1.5-1.6 3.6-2.5 6.1-2.5.5 2 .9 4.4 4 5.4-.4 5-2.4 8-6 9.3z" fill="#b9ebfb"/></svg>
         <b>Өнімдер</b><span>Менің таңдауым — 5 өнім, кез келгенін басыңыз</span>
       </button>
       <button class="tile" data-m="m-delivery">
@@ -190,7 +182,7 @@
         <b>Жеткізу</b><span>Қалаңыздағы орталыққа дейін тегін</span>
       </button>
       <button class="tile" data-m="m-reg">
-        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="14" cy="14" r="4.6" fill="none" stroke="#d7be83" stroke-width="2.4"/><path d="m17.4 17.4 6.2 6.2M21 21.5l2.4-2.3M23.6 24l2-2" stroke="#d7be83" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="14" cy="14" r="4.6" fill="none" stroke="#b9ebfb" stroke-width="2.4"/><path d="m17.4 17.4 6.2 6.2M21 21.5l2.4-2.3M23.6 24l2-2" stroke="#b9ebfb" stroke-width="2.4" stroke-linecap="round"/></svg>
         <b>Тіркелу</b><span>Мүше бағасына апаратын қарапайым қадамдар</span>
       </button>
       <button class="tile dark" data-m="m-about">
@@ -198,7 +190,7 @@
         <b>Мен туралы</b><span>Мен кіммін және неге Atomy</span>
       </button>
       <button class="tile map-tile" data-m="m-map">
-        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
         <div><b>Ақтаудағы орталық</b><span>Atomy Altyn-Arman · 5-ші шағын аудан, 14/2 — карта, бағыт және жұмыс кестесі</span></div>
       </button>
     </nav>
@@ -300,11 +292,11 @@
       <div class="sheet-head"><h2 id="t-delivery">Жеткізу</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="dlv">
-          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
           <div><b>Қалаңыздағы орталыққа дейін — тегін</b><span>Тапсырыс қалаңыздағы Atomy орталығына келеді, ыңғайлы уақытта алып кетуге болады.</span></div>
         </div>
         <div class="dlv">
-          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 16.5 17 9l8 7.5V25H9v-8.5z" fill="#fffdf8" opacity=".95"/><path d="M14.5 25v-5.5h5V25" fill="#bc9a52"/></svg>
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 16.5 17 9l8 7.5V25H9v-8.5z" fill="#fffdf8" opacity=".95"/><path d="M14.5 25v-5.5h5V25" fill="#087cb2"/></svg>
           <div><b>Үйге дейін — 65 000 ₸-ден бастап тегін</b><span>65 000 теңгеден асатын тапсырыста курьер бәрін есігіңізге дейін тегін жеткізеді.</span></div>
         </div>
       </div>
@@ -322,7 +314,7 @@
           <span class="map-open">2ГИС-те ашу ↗</span>
         </a>
         <div class="addr">
-          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#d7be83"/><circle cx="17" cy="14" r="2.6" fill="#16352e"/></svg>
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
           <div>
             <b>Atomy Altyn-Arman орталығы <span class="star">★ 4.8</span></b>
             <span>Ақтау, 5-ші шағын аудан, 14/2 — әкімшілік ғимарат, 1-қабат. Мұнда тапсырысты алып, өнімді көзбен көріп, сұрақ қоюға болады.</span>
@@ -526,6 +518,11 @@
         c.addEventListener('click', hide);
       });
       document.addEventListener('keydown', function(e){ if(e.key === 'Escape') hide(); });
+    })();
+    (function(){
+      var isLocalPreview = location.protocol === 'file:' || location.hostname === '127.0.0.1' || location.hostname === 'localhost';
+      if(!isLocalPreview) return;
+      document.querySelectorAll('.lang a[href="index.html"]').forEach(function(link){ link.href = 'compact.html'; });
     })();
   </script>
 </body>
