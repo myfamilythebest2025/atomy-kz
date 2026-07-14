@@ -8,18 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <!--
-    КОМПАКТНАЯ версия лендинга: один экран, разделы и продукты — всплывающими окнами.
-    МЕСТА ДЛЯ ДАННЫХ МАМЫ:
-    1. Фото для первого экрана: assets/magda-hero.jpg.
-    2. «[N лет]» в окне «Обо мне».
-  -->
+  <!-- КОМПАКТНАЯ версия лендинга: один экран, разделы и продукты — всплывающими окнами. -->
   <style>
     :root{--ink:#123e58;--deep:#087cb2;--deep2:#00618e;--gold:#0b91ca;--gold2:#0872a4;--gold-soft:#9edff5;--cream:#f1faff;--paper:#ffffff;--line:#cde8f2;--muted:#4b6e7e;--atomy:#14aee2}
     *{box-sizing:border-box}
     html,body{margin:0;height:100%}
     body{background:var(--cream);color:var(--ink);font-family:Lato,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.5}
-    .app{position:relative;isolation:isolate;max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:#eaf8fe url("assets/magda-hero.jpg") center top/cover no-repeat}
+    .app{position:relative;isolation:isolate;max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:#eaf8fe url("assets/magda-hero.jpg") center top/100% auto no-repeat}
     /* шапка */
     .top{position:relative;isolation:isolate;overflow:hidden;min-height:390px;display:flex;flex-direction:column;text-align:left;padding:16px 22px 18px}
     .top>:not(.hero-photo){position:relative;z-index:1}
@@ -115,8 +110,6 @@
     .soc{display:flex;align-items:center;gap:7px;text-decoration:none;font-size:12px;font-weight:900;color:var(--ink);background:linear-gradient(160deg,#ffffff,#f0f3ec);border:1px solid #ffffffcc;border-radius:999px;padding:8px 13px;box-shadow:0 6px 14px #173b3114,inset 0 1px 0 #fff}
     .soc:active{transform:scale(.96)}
     .soc i{font-style:normal;width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:#fff;box-shadow:0 2px 4px #0f2a2433}
-    .soc .tg{background:radial-gradient(circle at 30% 25%,#4fc3f7,#229ED9 65%,#1273a3)}
-    .soc .wa2{background:radial-gradient(circle at 30% 25%,#4fe083,#25d366 60%,#17a94e)}
     .soc .ig{background:radial-gradient(circle at 30% 110%,#fdc468,#df4996 55%,#8a3ab9)}
     /* график работы */
     .hours{background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:14px 16px;box-shadow:inset 0 1px 0 #fff;margin-top:10px}
@@ -198,8 +191,6 @@
     <div class="bottom">
       <a class="wa" href="https://wa.me/77013130206?text=Hello%21%20I%20would%20like%20to%20learn%20about%20Atomy" target="_blank" rel="noopener"><span class="wa-ic">✆</span>Message on WhatsApp</a>
       <div class="socials">
-        <a class="soc" href="https://t.me/+3wmiCT4T9jlmYTdi" target="_blank" rel="noopener"><i class="tg">✈</i>Telegram chat</a>
-        <a class="soc" href="https://chat.whatsapp.com/C0VTUG3NIJf1rrtFHdEPZP" target="_blank" rel="noopener"><i class="wa2">💬</i>WhatsApp chat</a>
         <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram</a>
       </div>
       <p class="free">Free and no strings attached</p>
@@ -345,7 +336,7 @@
           <li><b>03</b><span>Buy directly at member prices</span></li>
         </ol>
         <button class="btn goldb" style="margin:0 0 10px" data-m="m-form">Registration form <span>→</span></button>
-        <a class="btn solid" href="https://docs.google.com/document/d/1sNWt25Ojme9ZibZAC9E_V0MietKyM7kJD5NgF5GZTNI/edit?usp=sharing" target="_blank" rel="noopener">Kazakhstan — registration guide <span>→</span></a>
+        <a class="btn solid" href="https://docs.google.com/document/d/1sNWt25Ojme9ZibZAC9E_V0MietKyM7kJD5NgF5GZTNI/edit?usp=sharing" target="_blank" rel="noopener">Self-registration <span>→</span></a>
         <div class="trust">
           <div><b>KR</b>South Korea, since 2009</div>
           <div><b>✓</b>Official store atomy.kz</div>
@@ -371,10 +362,6 @@
         <p>No extra noise. Only the things worth sharing with the people close to you.</p>
         <p style="font-weight:700;color:var(--ink)">Welcome! 🌿</p>
         <div class="socials" style="justify-content:flex-start">
-          <a class="soc" href="https://t.me/+3wmiCT4T9jlmYTdi" target="_blank" rel="noopener"><i class="tg">✈</i>Telegram chat</a>
-          <a class="soc" href="https://chat.whatsapp.com/C0VTUG3NIJf1rrtFHdEPZP" target="_blank" rel="noopener"><i class="wa2">💬</i>WhatsApp chat</a>
-        </div>
-        <div class="socials" style="justify-content:flex-start;margin-top:8px">
           <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram @magda.atomy</a>
         </div>
       </div>
@@ -388,7 +375,7 @@
       <div class="sheet-head"><h2 id="t-form">Registration form</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <p>Fill in the form — it will be sent via WhatsApp, and you will be registered in Atomy and helped with your first order.</p>
-        <div class="field"><label for="f-name">Full name — surname, first name, patronymic</label><input id="f-name" autocomplete="off" placeholder="e.g.: Aigul Akhmetova"></div>
+        <div class="field"><label for="f-name">Full name (middle name — if applicable)</label><input id="f-name" autocomplete="name" placeholder="e.g.: Aigul Akhmetova"></div>
         <div class="field"><label for="f-phone">Phone / WhatsApp</label>
           <div class="phone-wrap"><span class="pfx">+7</span><input id="f-phone" autocomplete="off" inputmode="numeric" maxlength="10" placeholder="701 123 45 67"></div>
         </div>
