@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/magda-hero2.jpg">
+  <link rel="preload" as="image" href="assets/magda-bg.jpg">
   <meta name="theme-color" content="#00618e">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23087cb2'/%3E%3Ctext x='32' y='44' font-size='34' font-weight='bold' text-anchor='middle' fill='%23fff' font-family='Arial'%3Ea%3C/text%3E%3C/svg%3E">
   <!-- КОМПАКТНАЯ версия лендинга: один экран, разделы и продукты — всплывающими окнами. -->
@@ -17,19 +17,14 @@
     *{box-sizing:border-box}
     html,body{margin:0;height:100%}
     body{background:linear-gradient(180deg,#f2fbff,#dceffa);color:var(--ink);font-family:Lato,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.5}
-    .app{position:relative;isolation:isolate;max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:linear-gradient(175deg,#d9f0fb,#eef9ff 45%,#cfe9f7)}
-    /* живой аврора-фон под плитками */
-    .app:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:
-      radial-gradient(460px 340px at 92% 32%,#7fd4f2aa,transparent 70%),
-      radial-gradient(420px 320px at 2% 54%,#b5e7ffe6,transparent 70%),
-      radial-gradient(360px 280px at 76% 82%,#ffdf9e73,transparent 72%),
-      radial-gradient(320px 240px at 24% 92%,#6cc9ee80,transparent 72%);
-      animation:aur 16s ease-in-out infinite alternate}
-    @keyframes aur{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,-30px,0) scale(1.08)}}
-    @media(prefers-reduced-motion:reduce){.app:before{animation:none}}
+    .app{position:relative;isolation:isolate;max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:#0d4e6e}
+    /* фото мамы — фон всего экрана */
+    .app:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:url("assets/magda-bg.jpg") center top/cover no-repeat}
+    /* вуаль для читаемости: сверху едва, снизу глубже */
+    .app:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(6,48,68,.16) 0%,rgba(6,48,68,.10) 26%,rgba(6,48,68,.34) 48%,rgba(5,42,62,.58) 72%,rgba(4,36,54,.74) 100%)}
     /* шапка */
-    .top{position:relative;isolation:isolate;overflow:hidden;min-height:390px;display:flex;flex-direction:column;text-align:left;padding:18px 18px 19px;background:#b9d6e2 url("assets/magda-hero2.jpg") right top/auto 500px no-repeat}
-    .top:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(4,48,72,.74) 0%,rgba(4,48,72,.56) 36%,rgba(4,48,72,.14) 60%,rgba(4,48,72,0) 78%),linear-gradient(0deg,rgba(0,64,95,.38),rgba(0,64,95,0) 24%);pointer-events:none}
+    .top{position:relative;isolation:isolate;min-height:390px;display:flex;flex-direction:column;text-align:left;padding:18px 18px 19px}
+    .top:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(4,48,72,.62) 0%,rgba(4,48,72,.44) 38%,rgba(4,48,72,.10) 62%,rgba(4,48,72,0) 80%);pointer-events:none}
     .top>:not(.hero-photo){position:relative;z-index:1}
     .eyebrow{font-size:8.5px;line-height:1.45;letter-spacing:.13em;text-transform:uppercase;color:#e9f9ff;font-weight:900;margin:13px 0 0;max-width:170px;text-shadow:0 1px 5px #063853}
     .brand{display:table;font-size:30px;line-height:.8;letter-spacing:-1.5px;color:#39bce8;font-weight:900;margin:0;text-shadow:0 1px 3px #ffffffcc;background:none;border:0;border-radius:0;padding:0;box-shadow:none}
@@ -44,7 +39,7 @@
     h1 em{display:block;font-size:18px;line-height:1.2;font-style:italic;color:#c6efff;margin-top:5px}
     .sub{position:relative;z-index:1;color:#f4fcff;font-size:11.5px;line-height:1.42;max-width:176px;min-height:49px;margin:9px 0 0;text-shadow:0 1px 6px #063853}
     /* бегущая строка */
-    .ticker{display:block;margin:0;background:linear-gradient(90deg,var(--deep2),var(--deep) 30% 70%,var(--deep2));color:#e9f9ff;overflow:hidden;white-space:nowrap;padding:9px 0;box-shadow:inset 0 1px 0 #ffffff35,inset 0 -1px 0 #00517055}
+    .ticker{display:block;margin:0;background:linear-gradient(90deg,rgba(0,77,112,.86),rgba(8,124,178,.82) 30% 70%,rgba(0,77,112,.86));-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#e9f9ff;overflow:hidden;white-space:nowrap;padding:9px 0;box-shadow:inset 0 1px 0 #ffffff35,inset 0 -1px 0 #00517055}
     .ticker-track{display:inline-block;animation:tick 30s linear infinite;will-change:transform}
     .ticker span{display:inline-block;padding:0 18px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
     .ticker b{color:var(--gold-soft)}
@@ -89,7 +84,7 @@
     @media(prefers-reduced-motion:reduce){.wa,.wa:after{animation:none}}
     .wa:active{transform:translateY(1px)}
     .wa-ic{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#4fe083,#25d366 60%,#17a94e);display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:900;box-shadow:0 2px 5px #0f2a2450}
-    .free{font-size:11px;color:#86938e;text-align:center;margin:8px 0 0}
+    .free{font-size:11px;color:#d8ecf7;text-align:center;margin:8px 0 0;text-shadow:0 1px 4px #06304a}
     /* модалки */
     .modal{position:fixed;inset:0;display:none;z-index:50}
     .modal.open{display:block}
