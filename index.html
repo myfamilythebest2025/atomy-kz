@@ -19,7 +19,7 @@
     body{background:linear-gradient(180deg,#f2fbff,#dceffa);color:var(--ink);font-family:Lato,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.5}
     .app{position:relative;isolation:isolate;max-width:480px;margin:auto;min-height:100dvh;display:flex;flex-direction:column;background:#0d4e6e}
     /* фото мамы — фон всего экрана */
-    .app:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:url("assets/magda-bg.jpg") center top/cover no-repeat}
+    .app:before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:url("assets/magda-bg.jpg") 32% top/cover no-repeat}
     /* вуаль для читаемости: сверху едва, снизу глубже */
     .app:after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(6,48,68,.16) 0%,rgba(6,48,68,.10) 26%,rgba(6,48,68,.34) 48%,rgba(5,42,62,.58) 72%,rgba(4,36,54,.74) 100%)}
     /* шапка */
@@ -170,7 +170,7 @@
     <header class="top">
       <nav class="lang"><a href="kz.html">ҚАЗ</a><a class="on" href="index.html">РУС</a><a href="en.html">ENG</a></nav>
       <p class="brand">atom<span>美</span><small>ATOMY</small></p>
-      <p class="eyebrow">— Официальный партнёр Atomy · Казахстан —</p>
+      <p class="eyebrow">— Официальный партнёр Atomy —</p>
       <h1><span class="h-main">Корейская забота о себе</span><em>по честным ценам</em></h1>
       <p class="sub">Помогу покупать продукцию Atomy напрямую, без наценок посредников.</p>
     </header>
@@ -197,7 +197,7 @@
       </button>
       <button class="tile" data-m="m-reg">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="14" cy="14" r="4.6" fill="none" stroke="#b9ebfb" stroke-width="2.4"/><path d="m17.4 17.4 6.2 6.2M21 21.5l2.4-2.3M23.6 24l2-2" stroke="#b9ebfb" stroke-width="2.4" stroke-linecap="round"/></svg>
-        <b>Регистрация</b><span>Простые шаги к ценам участника</span>
+        <b>Регистрация</b><span>🌍 Международная — из любой страны мира</span>
       </button>
       <button class="tile dark" data-m="m-about">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 25.5c-4.8-3-8-5.8-8-9.3 0-2.4 1.9-4.2 4.2-4.2 1.6 0 3 .9 3.8 2.2.8-1.3 2.2-2.2 3.8-2.2 2.3 0 4.2 1.8 4.2 4.2 0 3.5-3.2 6.3-8 9.3z" fill="#fffdf8" opacity=".95"/></svg>
@@ -351,6 +351,10 @@
     <div class="sheet">
       <div class="sheet-head"><h2 id="t-reg">Как получить доступ</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
+        <div class="dlv" style="margin-bottom:14px">
+          <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="#b9ebfb" stroke-width="2"/><ellipse cx="17" cy="17" rx="4" ry="8.5" fill="none" stroke="#b9ebfb" stroke-width="1.6"/><path d="M9 14h16M9 20h16" stroke="#b9ebfb" stroke-width="1.6"/></svg>
+          <div><b>Регистрация — международная 🌍</b><span>Atomy работает почти по всему миру: присоединиться можно из любой страны — анкета ниже подойдёт всем.</span></div>
+        </div>
         <ol>
           <li><b>01</b><span>Зарегистрируйтесь бесплатно</span></li>
           <li><b>02</b><span>Войдите в личный кабинет на atomy.kz</span></li>
