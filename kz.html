@@ -26,7 +26,13 @@
     .top{position:relative;isolation:isolate;min-height:390px;display:flex;flex-direction:column;text-align:left;padding:18px 18px 19px}
     .top:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(4,48,72,.62) 0%,rgba(4,48,72,.44) 38%,rgba(4,48,72,.10) 62%,rgba(4,48,72,0) 80%);pointer-events:none}
     .top>:not(.hero-photo){position:relative;z-index:1}
-    .eyebrow{font-size:8.5px;line-height:1.45;letter-spacing:.13em;text-transform:uppercase;color:#e9f9ff;font-weight:900;margin:13px 0 0;max-width:170px;text-shadow:0 1px 5px #063853}
+    /* бейджи под логотипом */
+    .badges{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin:13px 0 0;max-width:176px}
+    .badge{display:inline-flex;align-items:center;gap:6px;font-size:8.5px;line-height:1;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#eefaff;background:#07405ea6;border:1px solid #ffffff42;border-radius:999px;padding:6px 10px 6px 8px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:0 4px 10px #06304a3d,inset 0 1px 0 #ffffff30;animation:rise .5s cubic-bezier(.2,.7,.3,1) both}
+    .badge:nth-child(2){animation-delay:.1s}
+    .badge:nth-child(3){animation-delay:.2s}
+    .badge i{font-style:normal;color:#7fe0ff;font-size:9.5px}
+    @media(prefers-reduced-motion:reduce){.badge{animation:none}}
     .brand{display:table;font-size:30px;line-height:.8;letter-spacing:-1.5px;color:#39bce8;font-weight:900;margin:0;text-shadow:0 1px 3px #ffffffcc;background:none;border:0;border-radius:0;padding:0;box-shadow:none}
     .brand span{display:inline-block;font-size:23px;line-height:1;vertical-align:-.02em;transform:translateY(-1px);margin-left:2px;letter-spacing:0}
     /* переключатель языков */
@@ -55,7 +61,7 @@
     .grid .tile{animation:rise .5s cubic-bezier(.2,.7,.3,1) both}
     .grid .tile:nth-child(1){animation-delay:.05s}.grid .tile:nth-child(2){animation-delay:.12s}
     .grid .tile:nth-child(3){animation-delay:.19s}.grid .tile:nth-child(4){animation-delay:.26s}
-    .grid .tile:nth-child(5){animation-delay:.33s}
+    .grid .tile:nth-child(5){animation-delay:.33s}.grid .tile:nth-child(6){animation-delay:.40s}
     .bottom .wa,.bottom .socials,.bottom .free{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
     @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials,.bottom .free{animation:none}}
     .tile:focus-visible,.btn:focus-visible,.wa:focus-visible,.prod:focus-visible,.x:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
@@ -64,9 +70,6 @@
     .chip3d{width:34px;height:34px;flex:none;filter:drop-shadow(0 4px 6px #17352b2e)}
     .tile.dark{background:linear-gradient(160deg,#19b5ea,#087cb2 62%,#00618e);border-color:#ffffff77;color:#fff;box-shadow:0 8px 18px #00618e3b,inset 0 1px 0 #ffffff66}
     .tile.dark span{color:#e1f7ff}
-    .tile.map-tile{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px;background:#fff;border-color:#d9edf5}
-    .tile.map-tile div{flex:1}
-    .tile.map-tile b{font-size:17px;display:block;margin-bottom:2px}
     /* карта */
     .map-wrap{display:block;position:relative;border-radius:18px;overflow:hidden;box-shadow:0 10px 24px #17352b22;margin-bottom:14px;background:#e9efe7;text-decoration:none}
     .map-wrap img{display:block;width:100%;height:auto}
@@ -77,13 +80,13 @@
     .addr .star{color:var(--gold);font-weight:900}
     /* низ */
     .bottom{padding:4px 18px calc(14px + env(safe-area-inset-bottom))}
-    .wa{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(165deg,#19b5ea,#087cb2 60%,#00618e);color:#fff;text-decoration:none;border-radius:999px;padding:16px;font-weight:900;box-shadow:0 12px 26px #0574aa46,inset 0 1px 0 #ffffff55;animation:waglow 3.4s ease-in-out infinite}
-    @keyframes waglow{0%,100%{box-shadow:0 12px 26px #0574aa46,inset 0 1px 0 #ffffff55}50%{box-shadow:0 14px 34px #0574aa73,inset 0 1px 0 #ffffff55}}
+    .wa{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(165deg,#43e07c,#25d366 55%,#149a55);color:#fff;text-decoration:none;border-radius:999px;padding:17px 8px;font-weight:900;font-size:clamp(11.5px,3.75vw,14px);letter-spacing:.01em;text-align:center;box-shadow:0 12px 26px #17a94e52,inset 0 1px 0 #ffffff66;animation:waglow 3.4s ease-in-out infinite}
+    @keyframes waglow{0%,100%{box-shadow:0 12px 26px #17a94e52,inset 0 1px 0 #ffffff66}50%{box-shadow:0 16px 38px #1fc06380,inset 0 1px 0 #ffffff66}}
     .wa:after{content:"";position:absolute;top:0;bottom:0;width:46px;transform:skewX(-24deg);background:linear-gradient(90deg,transparent,#ffffff59,transparent);animation:sheen 4.6s ease-in-out infinite;left:-70px}
     @keyframes sheen{0%,55%{left:-70px}75%,100%{left:130%}}
     @media(prefers-reduced-motion:reduce){.wa,.wa:after{animation:none}}
     .wa:active{transform:translateY(1px)}
-    .wa-ic{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#4fe083,#25d366 60%,#17a94e);display:inline-flex;align-items:center;justify-content:center;font-size:12px;color:#fff;font-weight:900;box-shadow:0 2px 5px #0f2a2450}
+    .wa-ic{width:24px;height:24px;flex:none;border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffffff,#f0fff6 70%,#d8f5e4);display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#17a94e;font-weight:900;box-shadow:0 2px 5px #0f2a2440}
     .free{font-size:11px;color:#d8ecf7;text-align:center;margin:8px 0 0;text-shadow:0 1px 4px #06304a}
     /* модалки */
     .modal{position:fixed;inset:0;display:none;z-index:50}
@@ -113,6 +116,14 @@
     /* карточка продукта */
     .p-hero{text-align:center;padding:4px 0 12px}
     .p-hero img{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 14px 16px #17352b26)}
+    /* отзывы */
+    .rev{background:linear-gradient(160deg,#f2fbff,#e4f2fa);border-radius:18px;padding:13px 15px;margin-bottom:10px;box-shadow:inset 0 1px 0 #fff,0 4px 10px #0751720d}
+    .rev-head{display:flex;align-items:center;gap:10px;margin-bottom:7px}
+    .rev-ava{width:36px;height:36px;flex:none;border-radius:50%;background:linear-gradient(160deg,#19b5ea,#00618e);color:#fff;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 7px #00618e40,inset 0 1px 0 #ffffff55}
+    .rev-head b{font-family:Lora,serif;font-size:14.5px;font-weight:600;display:block}
+    .rev-head small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+    .rev-stars{margin-left:auto;flex:none;color:#f5b301;font-size:11px;letter-spacing:1.5px;text-shadow:0 1px 2px #b57d0030}
+    .rev p{font-size:13px;line-height:1.5;color:#2c556d;margin:0}
     /* доставка */
     .dlv{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .dlv:last-of-type{margin-bottom:0}
@@ -170,9 +181,12 @@
     <header class="top">
       <nav class="lang"><a class="on" href="kz.html">ҚАЗ</a><a href="index.html">РУС</a><a href="en.html">ENG</a></nav>
       <p class="brand">atom<span>美</span><small>ATOMY</small></p>
-      <p class="eyebrow">— Atomy ресми серіктесі —</p>
+      <div class="badges">
+        <span class="badge"><i>✓</i>Atomy ресми серіктесі</span>
+        <span class="badge"><i>💬</i>Кеңес — тегін</span>
+      </div>
       <h1><span class="h-main">Өзіңе корейлік қамқорлық</span><em>адал бағамен</em></h1>
-      <p class="sub">Atomy өнімдерін делдалдардың үстемесінсіз тікелей сатып алуға көмектесемін.</p>
+      <p class="sub">Дәл сізге лайығын таңдап беремін және үстемесіз тікелей тапсырыс беруге көмектесемін.</p>
     </header>
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track">
@@ -189,7 +203,7 @@
     <nav class="grid">
       <button class="tile" data-m="m-products">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 24c-4-1.5-6-4.6-6-8 0-1.4.3-2.6.8-3.7C15 13.6 19.6 15 21.6 19c-1.2-4.5-4.7-6.6-8.7-7.2 1.5-1.6 3.6-2.5 6.1-2.5.5 2 .9 4.4 4 5.4-.4 5-2.4 8-6 9.3z" fill="#b9ebfb"/></svg>
-        <b>Өнімдер</b><span>Менің таңдауым — 5 өнім, кез келгенін басыңыз</span>
+        <b>Өнімдер</b><span>Atomy-мен танысу көбіне осылардан басталады</span>
       </button>
       <button class="tile" data-m="m-delivery">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M7 12h11v10H7z" fill="#fffdf8" opacity=".95"/><path d="M18 15h4.5l3 3.2V22H18v-7z" fill="#fffdf8" opacity=".85"/><circle cx="11.5" cy="23" r="2.1" fill="#96762f"/><circle cx="22.5" cy="23" r="2.1" fill="#96762f"/><circle cx="11.5" cy="23" r=".9" fill="#e6cd93"/><circle cx="22.5" cy="23" r=".9" fill="#e6cd93"/></svg>
@@ -203,14 +217,18 @@
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 25.5c-4.8-3-8-5.8-8-9.3 0-2.4 1.9-4.2 4.2-4.2 1.6 0 3 .9 3.8 2.2.8-1.3 2.2-2.2 3.8-2.2 2.3 0 4.2 1.8 4.2 4.2 0 3.5-3.2 6.3-8 9.3z" fill="#fffdf8" opacity=".95"/></svg>
         <b>Мен туралы</b><span>Мен кіммін және неге Atomy</span>
       </button>
-      <button class="tile map-tile" data-m="m-map">
+      <button class="tile" data-m="m-reviews">
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 9.5h16v11.5H15.5l-4.5 4.5v-4.5H9z" fill="#fffdf8" opacity=".95"/><path d="m17 11.4 1.3 2.6 2.9.4-2.1 2 .5 2.9L17 17.9l-2.6 1.4.5-2.9-2.1-2 2.9-.4z" fill="#f5b301"/></svg>
+        <b>Пікірлер</b><span>Клиенттер не дейді</span>
+      </button>
+      <button class="tile" data-m="m-map">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
-        <div><b>Ақтаудағы орталық</b><span>Atomy Altyn-Arman · 5-ші шағын аудан, 14/2 — карта, бағыт және жұмыс кестесі</span></div>
+        <b>Ақтаудағы орталық</b><span>Карта, бағыт және жұмыс кестесі</span>
       </button>
     </nav>
 
     <div class="bottom">
-      <a class="wa" href="https://wa.me/77013130206?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%21%20Atomy%20%D1%82%D1%83%D1%80%D0%B0%D0%BB%D1%8B%20%D0%B1%D1%96%D0%BB%D0%B3%D1%96%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96" target="_blank" rel="noopener"><span class="wa-ic">✆</span>WhatsApp-қа жазу</a>
+      <a class="wa" href="https://wa.me/77013130206?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%21%20Atomy%20%D1%82%D1%83%D1%80%D0%B0%D0%BB%D1%8B%20%D0%B1%D1%96%D0%BB%D0%B3%D1%96%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96" target="_blank" rel="noopener"><span class="wa-ic">✆</span>WhatsApp-та кеңес алу</a>
       <div class="socials">
         <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram</a>
       </div>
@@ -224,7 +242,7 @@
     <div class="sheet">
       <div class="sheet-head"><h2 id="t-products">Сүйікті өнімдер</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <p style="margin-bottom:6px">Өнімді басыңыз — сипаттамасы ашылады.</p>
+        <p style="margin-bottom:6px">Atomy-мен танысу көбіне дәл осы өнімдерден басталады. Өнімді басыңыз — сипаттамасы ашылады.</p>
         <button class="prod" data-m="p-hemohim"><img src="assets/hemohim.webp" alt=""><div><b>ХемоХИМ</b><span>Atomy-дың №1 фирмалық кешені</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-noni"><img src="assets/noni.webp" alt=""><div><b>Нони концентраты</b><span>Ашытылған нони жемістері</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-probiotic"><img src="assets/probiotic.webp" alt=""><div><b>Пробиотик 10+</b><span>Күн сайын ас қорыту жайлылығы</span></div><span class="go">→</span></button>
@@ -389,6 +407,33 @@
         <div class="socials" style="justify-content:flex-start">
           <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram @magda.atomy</a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ОТЗЫВЫ ═══ -->
+  <div class="modal" id="m-reviews" role="dialog" aria-modal="true" aria-labelledby="t-reviews">
+    <div class="modal-bg" data-close></div>
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="t-reviews">Клиенттердің пікірлері</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-body">
+        <div class="rev">
+          <div class="rev-head"><span class="rev-ava">А</span><div><b>Айгүл</b><small>Ақтау</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Магда тіркелуге және алғашқы тапсырысты жинауға көмектесті. Бәрін байыппен түсіндірді, ештеңе таңбады. Кофе мен C дәруменіне енді ай сайын тапсырыс береміз.»</p>
+        </div>
+        <div class="rev">
+          <div class="rev-head"><span class="rev-ava">Н</span><div><b>Наталья</b><small>Алматы</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Бағалары ресми дүкендегідей, үстемесіз екені ұнады. Тапсырыс Atomy орталығына келді, жұмыстан қайтарда алып кеттім.»</p>
+        </div>
+        <div class="rev">
+          <div class="rev-head"><span class="rev-ava">Г</span><div><b>Гүлнара</b><small>Жаңаөзен</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Көп ойландым, бірақ кеңес тегін болған соң сұрауға бел будым. Магда WhatsApp-та барлық сұраққа жауап берді, 10 минутта тіркелдік.»</p>
+        </div>
+        <div class="rev">
+          <div class="rev-head"><span class="rev-ava">С</span><div><b>Сәуле</b><small>Астана</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Пробиотик пен нониді бүкіл отбасыма аламын. Қосымшада өзім тапсырыс беремін, сұрақ туса — Магда әрдайым байланыста.»</p>
+        </div>
+        <p class="send-hint" style="margin-top:14px">Сіз де осылай бастағыңыз келе ме? Жазыңыз — неден бастау керегін айтып беремін 💙</p>
       </div>
     </div>
   </div>
