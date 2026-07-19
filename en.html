@@ -62,8 +62,8 @@
     .grid .tile:nth-child(1){animation-delay:.05s}.grid .tile:nth-child(2){animation-delay:.12s}
     .grid .tile:nth-child(3){animation-delay:.19s}.grid .tile:nth-child(4){animation-delay:.26s}
     .grid .tile:nth-child(5){animation-delay:.33s}.grid .tile:nth-child(6){animation-delay:.40s}
-    .bottom .wa,.bottom .socials,.bottom .free{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
-    @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials,.bottom .free{animation:none}}
+    .bottom .wa,.bottom .socials{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
+    @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials{animation:none}}
     .tile:focus-visible,.btn:focus-visible,.wa:focus-visible,.prod:focus-visible,.x:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
     .tile b{font-family:Lora,serif;font-size:16px;font-weight:600;min-height:24px}
     .tile span{font-size:11.5px;color:var(--muted);line-height:1.35;min-height:31px}
@@ -87,7 +87,6 @@
     @media(prefers-reduced-motion:reduce){.wa,.wa:after{animation:none}}
     .wa:active{transform:translateY(1px)}
     .wa-ic{width:24px;height:24px;flex:none;border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffffff,#f0fff6 70%,#d8f5e4);display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#17a94e;font-weight:900;box-shadow:0 2px 5px #0f2a2440}
-    .free{font-size:11px;color:#d8ecf7;text-align:center;margin:8px 0 0;text-shadow:0 1px 4px #06304a}
     /* модалки */
     .modal{position:fixed;inset:0;display:none;z-index:50}
     .modal.open{display:block}
@@ -183,10 +182,9 @@
       <p class="brand">atom<span>美</span><small>ATOMY</small></p>
       <div class="badges">
         <span class="badge"><i>✓</i>Official Atomy partner</span>
-        <span class="badge"><i>💬</i>Free consultation</span>
       </div>
       <h1><span class="h-main">Korean self-care</span><em>at honest prices</em></h1>
-      <p class="sub">I'll help you pick what truly suits you and order directly — no markups.</p>
+      <p class="sub">I'll help you order directly — no markups.</p>
     </header>
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track">
@@ -232,7 +230,6 @@
       <div class="socials">
         <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram</a>
       </div>
-      <p class="free">Free and no strings attached</p>
     </div>
   </div>
 
@@ -244,7 +241,7 @@
       <div class="sheet-body">
         <p style="margin-bottom:6px">Most people get to know Atomy through these very products. Tap a product to see its description.</p>
         <button class="prod" data-m="p-hemohim"><img src="assets/hemohim.webp" alt=""><div><b>HemoHIM</b><span>Atomy's #1 signature product</span></div><span class="go">→</span></button>
-        <button class="prod" data-m="p-noni"><img src="assets/noni.webp" alt=""><div><b>Noni Concentrate</b><span>Fermented noni fruit</span></div><span class="go">→</span></button>
+        <button class="prod" data-m="p-paste"><img src="assets/paste.webp" alt=""><div><b>Toothpaste</b><span>Set of 5 propolis tubes</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-probiotic"><img src="assets/probiotic.webp" alt=""><div><b>Probiotics 10+</b><span>Daily digestive comfort</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-vitaminc"><img src="assets/vitaminc.webp" alt=""><div><b>Vitamin C</b><span>Immune support for the whole family</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-arabica"><img src="assets/arabica.webp" alt=""><div><b>Arabica Coffee</b><span>Smooth stick coffee, 50 pcs</span></div><span class="go">→</span></button>
@@ -267,14 +264,14 @@
     </div>
   </div>
 
-  <div class="modal" id="p-noni" role="dialog" aria-modal="true" aria-labelledby="tp-noni">
+  <div class="modal" id="p-paste" role="dialog" aria-modal="true" aria-labelledby="tp-paste">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-noni">Fermented Noni Concentrate</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-paste">Atomy Toothpaste</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <div class="p-hero"><img src="assets/noni.webp" alt="Noni"></div>
-        <p>A concentrate of noni — a tropical fruit valued for centuries across Southeast Asia and Polynesia. Unlike regular juice, the fruit goes through double fermentation: the taste becomes milder and the nutrients are easier to absorb.</p>
-        <p>It comes in handy single-serve sticks: mix with a glass of water or drink as is. One stick in the morning is a simple daily habit for an energetic start — easy to take to work or on a trip.</p>
+        <div class="p-hero"><img src="assets/paste.webp" alt="Toothpaste"></div>
+        <p>A set of five large 200 g tubes of Atomy's signature propolis toothpaste. It gently cleans teeth, freshens breath and helps keep gums healthy.</p>
+        <p>It's one of the best-loved Atomy products in Kazakhstan: a 5.0 rating and over 11,000 orders in the official store. The big set lasts a long time, so families usually buy one for the whole household.</p>
       </div>
     </div>
   </div>
@@ -422,16 +419,16 @@
           <p>“Magda helped me register and put together my first order. She explained everything calmly, no pushing at all. Now we order the coffee and vitamin C every month.”</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">N</span><div><b>Natalya</b><small>Almaty</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>“I liked that the prices are the same as in the official store, no markups. My order arrived at the Atomy center and I picked it up on my way home.”</p>
+          <div class="rev-head"><span class="rev-ava">V</span><div><b>Viktor</b><small>on Banaba · from our chat</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>“Banaba with ginseng helps those who are losing their stamina and feel sluggish and unsure about the future. You will completely forget about fatigue and weariness. This is my own research — I took Banaba for three months.”</p>
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">G</span><div><b>Gulnara</b><small>Zhanaozen</small></div><span class="rev-stars">★★★★★</span></div>
           <p>“I hesitated for a long time, but the consultation was free, so I decided to ask. Magda answered all my questions on WhatsApp and we registered in 10 minutes.”</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">S</span><div><b>Saule</b><small>Astana</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>“I buy the probiotics and noni for the whole family. I order myself in the app, and whenever I have a question — Magda is always there.”</p>
+          <div class="rev-head"><span class="rev-ava">M</span><div><b>Marina</b><small>on Red Ginseng and Banaba</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>“My sugar was never very high, it did not go above 7.5. With Red Ginseng and Banaba it has stayed at 5.4–5.5 since the first box. Now I take it in courses: a month on, a month off. I am happy with the result.”</p>
         </div>
         <p class="send-hint" style="margin-top:14px">Want the same? Message me — I'll help you get started 💙</p>
       </div>

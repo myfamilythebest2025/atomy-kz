@@ -62,8 +62,8 @@
     .grid .tile:nth-child(1){animation-delay:.05s}.grid .tile:nth-child(2){animation-delay:.12s}
     .grid .tile:nth-child(3){animation-delay:.19s}.grid .tile:nth-child(4){animation-delay:.26s}
     .grid .tile:nth-child(5){animation-delay:.33s}.grid .tile:nth-child(6){animation-delay:.40s}
-    .bottom .wa,.bottom .socials,.bottom .free{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
-    @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials,.bottom .free{animation:none}}
+    .bottom .wa,.bottom .socials{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
+    @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials{animation:none}}
     .tile:focus-visible,.btn:focus-visible,.wa:focus-visible,.prod:focus-visible,.x:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
     .tile b{font-family:Lora,serif;font-size:16px;font-weight:600;min-height:24px}
     .tile span{font-size:11.5px;color:var(--muted);line-height:1.35;min-height:31px}
@@ -87,7 +87,6 @@
     @media(prefers-reduced-motion:reduce){.wa,.wa:after{animation:none}}
     .wa:active{transform:translateY(1px)}
     .wa-ic{width:24px;height:24px;flex:none;border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffffff,#f0fff6 70%,#d8f5e4);display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#17a94e;font-weight:900;box-shadow:0 2px 5px #0f2a2440}
-    .free{font-size:11px;color:#d8ecf7;text-align:center;margin:8px 0 0;text-shadow:0 1px 4px #06304a}
     /* модалки */
     .modal{position:fixed;inset:0;display:none;z-index:50}
     .modal.open{display:block}
@@ -183,10 +182,9 @@
       <p class="brand">atom<span>美</span><small>ATOMY</small></p>
       <div class="badges">
         <span class="badge"><i>✓</i>Официальный партнёр Atomy</span>
-        <span class="badge"><i>💬</i>Консультация — бесплатно</span>
       </div>
       <h1><span class="h-main">Корейская забота о себе</span><em>по честным ценам</em></h1>
-      <p class="sub">Подберу то, что подойдёт именно вам, и помогу заказывать напрямую — без наценок.</p>
+      <p class="sub">Помогу заказывать напрямую — без наценок.</p>
     </header>
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track">
@@ -232,7 +230,6 @@
       <div class="socials">
         <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram</a>
       </div>
-      <p class="free">Бесплатно и ни к чему не обязывает</p>
     </div>
   </div>
 
@@ -244,7 +241,7 @@
       <div class="sheet-body">
         <p style="margin-bottom:6px">Чаще всего знакомство с Atomy начинается именно с них. Нажмите на продукт — откроется описание.</p>
         <button class="prod" data-m="p-hemohim"><img src="assets/hemohim.webp" alt=""><div><b>ХемоХИМ</b><span>Фирменный комплекс №1 в Atomy</span></div><span class="go">→</span></button>
-        <button class="prod" data-m="p-noni"><img src="assets/noni.webp" alt=""><div><b>Концентрат Нони</b><span>Ферментированные плоды нони</span></div><span class="go">→</span></button>
+        <button class="prod" data-m="p-paste"><img src="assets/paste.webp" alt=""><div><b>Зубная паста</b><span>Набор 5 тюбиков с прополисом</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-probiotic"><img src="assets/probiotic.webp" alt=""><div><b>Пробиотик 10+</b><span>Комфорт пищеварения каждый день</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-vitaminc"><img src="assets/vitaminc.webp" alt=""><div><b>Витамин C</b><span>Поддержка иммунитета для всей семьи</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-arabica"><img src="assets/arabica.webp" alt=""><div><b>Кофе Арабика</b><span>Мягкий кофе в стиках, 50 шт</span></div><span class="go">→</span></button>
@@ -267,14 +264,14 @@
     </div>
   </div>
 
-  <div class="modal" id="p-noni" role="dialog" aria-modal="true" aria-labelledby="tp-noni">
+  <div class="modal" id="p-paste" role="dialog" aria-modal="true" aria-labelledby="tp-paste">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-noni">Ферментированный концентрат Нони</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-paste">Атоми Зубная паста</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <div class="p-hero"><img src="assets/noni.webp" alt="Нони"></div>
-        <p>Концентрат плодов нони — тропического фрукта, который веками ценится в Юго-Восточной Азии и Полинезии. В отличие от обычного сока, здесь плоды проходят двойную ферментацию: вкус становится мягче, а полезные вещества усваиваются легче.</p>
-        <p>Формат — удобные порционные стики: можно развести в стакане воды или выпить как есть. Один стик утром — простая ежедневная привычка для бодрого начала дня, которую легко взять с собой в дорогу, на работу или в путешествие.</p>
+        <div class="p-hero"><img src="assets/paste.webp" alt="Зубная паста"></div>
+        <p>Набор из 5 больших тюбиков по 200 г фирменной зубной пасты Atomy с прополисом. Паста бережно очищает зубы, освежает дыхание и помогает поддерживать здоровье дёсен.</p>
+        <p>Это один из самых любимых продуктов Atomy в Казахстане: рейтинг 5.0 и больше 11 000 заказов в официальном магазине. Большого набора хватает надолго, поэтому его обычно берут один на всю семью.</p>
       </div>
     </div>
   </div>
@@ -422,16 +419,16 @@
           <p>«Магда помогла зарегистрироваться и собрать первый заказ. Всё объяснила спокойно, ничего не навязывала. Кофе и витамин C теперь заказываем каждый месяц.»</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">Н</span><div><b>Наталья</b><small>Алматы</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>«Понравилось, что цены — как в официальном магазине, без накруток. Заказ пришёл в центр Atomy, забрала по пути с работы.»</p>
+          <div class="rev-head"><span class="rev-ava">В</span><div><b>Виктор</b><small>о Банабе · отзыв из чата</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Банаба с женьшенем поможет тем, кто теряет работоспособность, чувствует вялость и неверие в будущее. Про усталость, вялость, разбитость вы точно забудете. Это мои личные исследования — пропивал Банабу три месяца.»</p>
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">Г</span><div><b>Гульнара</b><small>Жанаозен</small></div><span class="rev-stars">★★★★★</span></div>
           <p>«Долго сомневалась, но консультация бесплатная — решила спросить. Магда ответила на все вопросы в WhatsApp, зарегистрировали за 10 минут.»</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">С</span><div><b>Сауле</b><small>Астана</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>«Беру пробиотик и нони для всей семьи. Удобно, что заказываю сама в приложении, а если вопрос — Магда всегда на связи.»</p>
+          <div class="rev-head"><span class="rev-ava">М</span><div><b>Марина</b><small>о Красном женьшене и Банабе</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«У меня сахар не был сильно высоким, выше 7,5 не поднимался. С Красным женьшенем и Банабой с первой коробки держится на отметке 5,4–5,5. Теперь пропиваю курсом: месяц приёма, месяц перерыв. Меня результат устроил.»</p>
         </div>
         <p class="send-hint" style="margin-top:14px">Хотите так же? Напишите — подскажу, с чего начать 💙</p>
       </div>

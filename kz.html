@@ -62,8 +62,8 @@
     .grid .tile:nth-child(1){animation-delay:.05s}.grid .tile:nth-child(2){animation-delay:.12s}
     .grid .tile:nth-child(3){animation-delay:.19s}.grid .tile:nth-child(4){animation-delay:.26s}
     .grid .tile:nth-child(5){animation-delay:.33s}.grid .tile:nth-child(6){animation-delay:.40s}
-    .bottom .wa,.bottom .socials,.bottom .free{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
-    @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials,.bottom .free{animation:none}}
+    .bottom .wa,.bottom .socials{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
+    @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa,.bottom .socials{animation:none}}
     .tile:focus-visible,.btn:focus-visible,.wa:focus-visible,.prod:focus-visible,.x:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
     .tile b{font-family:Lora,serif;font-size:16px;font-weight:600;min-height:24px}
     .tile span{font-size:11.5px;color:var(--muted);line-height:1.35;min-height:31px}
@@ -87,7 +87,6 @@
     @media(prefers-reduced-motion:reduce){.wa,.wa:after{animation:none}}
     .wa:active{transform:translateY(1px)}
     .wa-ic{width:24px;height:24px;flex:none;border-radius:50%;background:radial-gradient(circle at 30% 25%,#ffffff,#f0fff6 70%,#d8f5e4);display:inline-flex;align-items:center;justify-content:center;font-size:13px;color:#17a94e;font-weight:900;box-shadow:0 2px 5px #0f2a2440}
-    .free{font-size:11px;color:#d8ecf7;text-align:center;margin:8px 0 0;text-shadow:0 1px 4px #06304a}
     /* модалки */
     .modal{position:fixed;inset:0;display:none;z-index:50}
     .modal.open{display:block}
@@ -183,10 +182,9 @@
       <p class="brand">atom<span>美</span><small>ATOMY</small></p>
       <div class="badges">
         <span class="badge"><i>✓</i>Atomy ресми серіктесі</span>
-        <span class="badge"><i>💬</i>Кеңес — тегін</span>
       </div>
       <h1><span class="h-main">Өзіңе корейлік қамқорлық</span><em>адал бағамен</em></h1>
-      <p class="sub">Дәл сізге лайығын таңдап беремін және үстемесіз тікелей тапсырыс беруге көмектесемін.</p>
+      <p class="sub">Үстемесіз тікелей тапсырыс беруге көмектесемін.</p>
     </header>
 
     <div class="ticker" aria-hidden="true"><div class="ticker-track">
@@ -232,7 +230,6 @@
       <div class="socials">
         <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram</a>
       </div>
-      <p class="free">Тегін және ешнәрсеге міндеттемейді</p>
     </div>
   </div>
 
@@ -244,7 +241,7 @@
       <div class="sheet-body">
         <p style="margin-bottom:6px">Atomy-мен танысу көбіне дәл осы өнімдерден басталады. Өнімді басыңыз — сипаттамасы ашылады.</p>
         <button class="prod" data-m="p-hemohim"><img src="assets/hemohim.webp" alt=""><div><b>ХемоХИМ</b><span>Atomy-дың №1 фирмалық кешені</span></div><span class="go">→</span></button>
-        <button class="prod" data-m="p-noni"><img src="assets/noni.webp" alt=""><div><b>Нони концентраты</b><span>Ашытылған нони жемістері</span></div><span class="go">→</span></button>
+        <button class="prod" data-m="p-paste"><img src="assets/paste.webp" alt=""><div><b>Тіс пастасы</b><span>Прополисті 5 тюбиктен тұратын жинақ</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-probiotic"><img src="assets/probiotic.webp" alt=""><div><b>Пробиотик 10+</b><span>Күн сайын ас қорыту жайлылығы</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-vitaminc"><img src="assets/vitaminc.webp" alt=""><div><b>C дәрумені</b><span>Бүкіл отбасы иммунитетіне қолдау</span></div><span class="go">→</span></button>
         <button class="prod" data-m="p-arabica"><img src="assets/arabica.webp" alt=""><div><b>Арабика кофесі</b><span>Стиктегі жұмсақ кофе, 50 дана</span></div><span class="go">→</span></button>
@@ -267,14 +264,14 @@
     </div>
   </div>
 
-  <div class="modal" id="p-noni" role="dialog" aria-modal="true" aria-labelledby="tp-noni">
+  <div class="modal" id="p-paste" role="dialog" aria-modal="true" aria-labelledby="tp-paste">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-noni">Ашытылған Нони концентраты</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-paste">Атоми Тіс пастасы</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
-        <div class="p-hero"><img src="assets/noni.webp" alt="Нони"></div>
-        <p>Нони жемісінің концентраты — Оңтүстік-Шығыс Азия мен Полинезияда ғасырлар бойы бағаланған тропикалық жеміс. Кәдімгі шырыннан айырмашылығы — жемістер қос ашыту процесінен өтеді: дәмі жұмсарып, пайдалы заттары жеңіл сіңеді.</p>
-        <p>Форматы — ыңғайлы порциялық стиктер: бір стакан суға езуге де, сол күйінде ішуге де болады. Таңертеңгі бір стик — күнді сергек бастауға арналған қарапайым әдет; жолға, жұмысқа немесе саяхатқа алып жүру оңай.</p>
+        <div class="p-hero"><img src="assets/paste.webp" alt="Зубная паста"></div>
+        <p>Прополис қосылған фирмалық Atomy тіс пастасының 200 г-нан 5 үлкен тюбигі бар жинақ. Паста тісті ұқыпты тазартады, тынысты сергітеді және қызыл иектің саулығын сақтауға көмектеседі.</p>
+        <p>Бұл — Қазақстандағы ең сүйікті Atomy өнімдерінің бірі: ресми дүкенде рейтингі 5.0 және 11 000-нан астам тапсырыс. Үлкен жинақ ұзаққа жетеді, сондықтан оны әдетте бүкіл отбасына бір жинақтан алады.</p>
       </div>
     </div>
   </div>
@@ -422,16 +419,16 @@
           <p>«Магда тіркелуге және алғашқы тапсырысты жинауға көмектесті. Бәрін байыппен түсіндірді, ештеңе таңбады. Кофе мен C дәруменіне енді ай сайын тапсырыс береміз.»</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">Н</span><div><b>Наталья</b><small>Алматы</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>«Бағалары ресми дүкендегідей, үстемесіз екені ұнады. Тапсырыс Atomy орталығына келді, жұмыстан қайтарда алып кеттім.»</p>
+          <div class="rev-head"><span class="rev-ava">В</span><div><b>Виктор</b><small>Банаба туралы · чаттағы пікір</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Банаба женьшеньмен қоса жұмысқа қабілеті төмендеп, әлсіздік пен болашаққа сенімсіздік сезінгендерге көмектеседі. Шаршау мен әлсіреуді мүлде ұмытасыз. Бұл — өз зерттеуім: Банабаны үш ай іштім.»</p>
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">Г</span><div><b>Гүлнара</b><small>Жаңаөзен</small></div><span class="rev-stars">★★★★★</span></div>
           <p>«Көп ойландым, бірақ кеңес тегін болған соң сұрауға бел будым. Магда WhatsApp-та барлық сұраққа жауап берді, 10 минутта тіркелдік.»</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">С</span><div><b>Сәуле</b><small>Астана</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>«Пробиотик пен нониді бүкіл отбасыма аламын. Қосымшада өзім тапсырыс беремін, сұрақ туса — Магда әрдайым байланыста.»</p>
+          <div class="rev-head"><span class="rev-ava">М</span><div><b>Марина</b><small>Қызыл женьшень мен Банаба туралы</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Менің қантым өте жоғары емес еді, 7,5-тен аспайтын. Қызыл женьшень мен Банабамен алғашқы қораптан-ақ 5,4–5,5 деңгейінде тұр. Енді курспен ішемін: бір ай қабылдау, бір ай үзіліс. Нәтижеге ризамын.»</p>
         </div>
         <p class="send-hint" style="margin-top:14px">Сіз де осылай бастағыңыз келе ме? Жазыңыз — неден бастау керегін айтып беремін 💙</p>
       </div>
