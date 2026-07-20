@@ -130,6 +130,8 @@
     .rev-head small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
     .rev-stars{margin-left:auto;flex:none;color:#f5b301;font-size:11px;letter-spacing:1.5px;text-shadow:0 1px 2px #b57d0030}
     .rev p{font-size:13px;line-height:1.5;color:#2c556d;margin:0}
+    .rev-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:10px}
+    .rev-video{display:block;width:100%;max-height:420px;border-radius:12px;background:#062f44;object-fit:contain}
     /* доставка */
     .dlv{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .dlv:last-of-type{margin-bottom:0}
@@ -422,20 +424,25 @@
       <div class="sheet-head"><h2 id="t-reviews">Клиенттердің пікірлері</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">А</span><div><b>Айгүл</b><small>Ақтау</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>«Магда тіркелуге және алғашқы тапсырысты жинауға көмектесті. Бәрін байыппен түсіндірді, ештеңе таңбады. Кофе мен C дәруменіне енді ай сайын тапсырыс береміз.»</p>
+          <div class="rev-head"><span class="rev-ava">К</span><div><b>Кристина</b><small>ХемоХИМ туралы · чаттағы пікір</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Менде көп жыл бойы тонзиллит болды — аппаратпен емдеу уақытша ғана көмектесетін. ХемоХИМ-ді курспен іштім, және ол кетті: бадамша бездер іріңді тығындардан тазарып, кішірейді. Ал дәрігерлер тек оларды алып тастауды ұсынған. Тағы спирулина ішемін.»</p>
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">В</span><div><b>Виктор</b><small>Банаба туралы · чаттағы пікір</small></div><span class="rev-stars">★★★★★</span></div>
           <p>«Банаба женьшеньмен қоса жұмысқа қабілеті төмендеп, әлсіздік пен болашаққа сенімсіздік сезінгендерге көмектеседі. Шаршау мен әлсіреуді мүлде ұмытасыз. Бұл — өз зерттеуім: Банабаны үш ай іштім.»</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">Г</span><div><b>Гүлнара</b><small>Жаңаөзен</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>«Көп ойландым, бірақ кеңес тегін болған соң сұрауға бел будым. Магда WhatsApp-та барлық сұраққа жауап берді, 10 минутта тіркелдік.»</p>
+          <div class="rev-head"><span class="rev-ava">М</span><div><b>Жасөспірімнің анасы</b><small>Акне Эксперт жинағы + ХемоХИМ</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>«Қызымда жасөспірімдік акне болды, тері өте проблемалы еді. Ал енді бәрі кетті — қызым қатты риза! Бізге Атоми Акне Эксперт жинағы көмектесті, әрі ол бір ай ХемоХИМ ішті.»</p>
+          <img class="rev-photo" src="assets/review-acne.jpg" alt="До и после: кожа дочери" loading="lazy">
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">М</span><div><b>Марина</b><small>Қызыл женьшень мен Банаба туралы</small></div><span class="rev-stars">★★★★★</span></div>
           <p>«Менің қантым өте жоғары емес еді, 7,5-тен аспайтын. Қызыл женьшень мен Банабамен алғашқы қораптан-ақ 5,4–5,5 деңгейінде тұр. Енді курспен ішемін: бір ай қабылдау, бір ай үзіліс. Нәтижеге ризамын.»</p>
+        </div>
+        <div class="rev">
+          <div class="rev-head"><span class="rev-ava">▶</span><div><b>Бейне-пікір</b><small>ХемоХИМ туралы · чаттан</small></div></div>
+          <video class="rev-video" src="assets/review-hemohim.mp4" poster="assets/review-hemohim-poster.jpg" controls playsinline preload="none"></video>
         </div>
         <p class="send-hint" style="margin-top:14px">Сіз де осылай бастағыңыз келе ме? Жазыңыз — неден бастау керегін айтып беремін 💙</p>
       </div>

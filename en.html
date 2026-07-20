@@ -130,6 +130,8 @@
     .rev-head small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
     .rev-stars{margin-left:auto;flex:none;color:#f5b301;font-size:11px;letter-spacing:1.5px;text-shadow:0 1px 2px #b57d0030}
     .rev p{font-size:13px;line-height:1.5;color:#2c556d;margin:0}
+    .rev-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:10px}
+    .rev-video{display:block;width:100%;max-height:420px;border-radius:12px;background:#062f44;object-fit:contain}
     /* доставка */
     .dlv{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .dlv:last-of-type{margin-bottom:0}
@@ -422,20 +424,25 @@
       <div class="sheet-head"><h2 id="t-reviews">Client reviews</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
       <div class="sheet-body">
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">A</span><div><b>Aigul</b><small>Aktau</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>“Magda helped me register and put together my first order. She explained everything calmly, no pushing at all. Now we order the coffee and vitamin C every month.”</p>
+          <div class="rev-head"><span class="rev-ava">K</span><div><b>Kristina</b><small>on HemoHIM · from our chat</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>“I had tonsillitis for many years — device treatment only gave a temporary effect. I took a course of HemoHIM and it went away: my tonsils cleared of pus plugs and shrank. Doctors had only offered to remove them. I also take spirulina.”</p>
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">V</span><div><b>Viktor</b><small>on Banaba · from our chat</small></div><span class="rev-stars">★★★★★</span></div>
           <p>“Banaba with ginseng helps those who are losing their stamina and feel sluggish and unsure about the future. You will completely forget about fatigue and weariness. This is my own research — I took Banaba for three months.”</p>
         </div>
         <div class="rev">
-          <div class="rev-head"><span class="rev-ava">G</span><div><b>Gulnara</b><small>Zhanaozen</small></div><span class="rev-stars">★★★★★</span></div>
-          <p>“I hesitated for a long time, but the consultation was free, so I decided to ask. Magda answered all my questions on WhatsApp and we registered in 10 minutes.”</p>
+          <div class="rev-head"><span class="rev-ava">M</span><div><b>A teenager's mom</b><small>Acne Expert set + HemoHIM</small></div><span class="rev-stars">★★★★★</span></div>
+          <p>“My daughter had teenage acne, her skin was very problematic. And now it is all gone — she is thrilled! The Atomy Acne Expert set helped us, and she also took HemoHIM for a month.”</p>
+          <img class="rev-photo" src="assets/review-acne.jpg" alt="Before and after: skin" loading="lazy">
         </div>
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">M</span><div><b>Marina</b><small>on Red Ginseng and Banaba</small></div><span class="rev-stars">★★★★★</span></div>
           <p>“My sugar was never very high, it did not go above 7.5. With Red Ginseng and Banaba it has stayed at 5.4–5.5 since the first box. Now I take it in courses: a month on, a month off. I am happy with the result.”</p>
+        </div>
+        <div class="rev">
+          <div class="rev-head"><span class="rev-ava">▶</span><div><b>Video review</b><small>on HemoHIM · from our chat</small></div></div>
+          <video class="rev-video" src="assets/review-hemohim.mp4" poster="assets/review-hemohim-poster.jpg" controls playsinline preload="none"></video>
         </div>
         <p class="send-hint" style="margin-top:14px">Want the same? Message me — I'll help you get started 💙</p>
       </div>
