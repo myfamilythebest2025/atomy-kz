@@ -209,7 +209,7 @@
       </button>
       <button class="tile" data-m="m-reg">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="14" cy="14" r="4.6" fill="none" stroke="#b9ebfb" stroke-width="2.4"/><path d="m17.4 17.4 6.2 6.2M21 21.5l2.4-2.3M23.6 24l2-2" stroke="#b9ebfb" stroke-width="2.4" stroke-linecap="round"/></svg>
-        <b>Регистрация</b><span>🌍 Международная — из любой страны мира</span>
+        <b>Регистрация</b><span>🌍 Международная — Atomy работает в десятках стран</span>
       </button>
       <button class="tile dark" data-m="m-about">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 25.5c-4.8-3-8-5.8-8-9.3 0-2.4 1.9-4.2 4.2-4.2 1.6 0 3 .9 3.8 2.2.8-1.3 2.2-2.2 3.8-2.2 2.3 0 4.2 1.8 4.2 4.2 0 3.5-3.2 6.3-8 9.3z" fill="#fffdf8" opacity=".95"/></svg>
@@ -368,7 +368,7 @@
       <div class="sheet-body">
         <div class="dlv" style="margin-bottom:14px">
           <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="#b9ebfb" stroke-width="2"/><ellipse cx="17" cy="17" rx="4" ry="8.5" fill="none" stroke="#b9ebfb" stroke-width="1.6"/><path d="M9 14h16M9 20h16" stroke="#b9ebfb" stroke-width="1.6"/></svg>
-          <div><b>Регистрация — международная 🌍</b><span>Atomy работает почти по всему миру: присоединиться можно из любой страны — анкета ниже подойдёт всем.</span></div>
+          <div><b>Регистрация — международная 🌍</b><span>Atomy официально работает в 27 странах и по всей Европе. Выберите свою страну в анкете — помогу зарегистрироваться.</span></div>
         </div>
         <ol>
           <li><b>01</b><span>Зарегистрируйтесь бесплатно</span></li>
@@ -450,9 +450,22 @@
           <select id="f-country">
             <option value="" selected disabled>Выберите страну…</option>
             <option>Казахстан</option><option>Россия</option><option>Кыргызстан</option><option>Узбекистан</option>
-            <option>Азербайджан</option><option>Армения</option><option>Беларусь</option><option>Грузия</option>
-            <option>Монголия</option><option>Таджикистан</option><option>Турция</option><option>ОАЭ</option>
-            <option>Южная Корея</option><option>США</option><option>Другая страна</option>
+            <option>Беларусь</option><option>Монголия</option><option>Турция</option><option>Южная Корея</option><option>США</option>
+            <option>Австралия</option><option>Бразилия</option><option>Великобритания</option><option>Гонконг</option>
+            <option>Индия</option><option>Индонезия</option><option>Камбоджа</option><option>Канада</option>
+            <option>Китай</option><option>Колумбия</option><option>Малайзия</option><option>Мексика</option>
+            <option>Новая Зеландия</option><option>Сингапур</option><option>Тайвань</option><option>Таиланд</option>
+            <option>Филиппины</option><option>Япония</option>
+            <optgroup label="Европа — единый сайт Atomy">
+              <option>Австрия</option><option>Бельгия</option><option>Болгария</option><option>Венгрия</option>
+              <option>Германия</option><option>Греция</option><option>Дания</option><option>Ирландия</option>
+              <option>Исландия</option><option>Испания</option><option>Италия</option><option>Кипр</option>
+              <option>Латвия</option><option>Литва</option><option>Лихтенштейн</option><option>Люксембург</option>
+              <option>Мальта</option><option>Нидерланды</option><option>Польша</option><option>Португалия</option>
+              <option>Румыния</option><option>Словакия</option><option>Словения</option><option>Финляндия</option>
+              <option>Франция</option><option>Хорватия</option><option>Чехия</option><option>Швеция</option>
+              <option>Швейцария</option><option>Эстония</option>
+            </optgroup>
           </select>
         </div>
         <div class="field" id="f-other-wrap" style="display:none"><label for="f-other">Укажите вашу страну</label><input id="f-other" autocomplete="off" placeholder="Например: Германия"></div>
@@ -514,19 +527,23 @@
         if (c === 'Другая страна') {
           cityWrap.style.display = 'none';
           cityOtherWrap.style.display = '';
-        } else if (c) {
+        } else if (c && CITIES[c]) {
           cityWrap.style.display = '';
           fillCities(c);
           cityOtherWrap.style.display = 'none';
+        } else if (c) {
+          // страна без списка городов — свободное поле
+          cityWrap.style.display = 'none';
+          cityOtherWrap.style.display = '';
         }
       }
       function cityValue(){
-        if (country.value === 'Другая страна') return val('f-city-other');
+        if (country.value === 'Другая страна' || !CITIES[country.value]) return val('f-city-other');
         if (citySel.value === 'Другой город') return val('f-city-other');
         return citySel.value;
       }
       function upd(){
-        if (country.value !== 'Другая страна') {
+        if (country.value !== 'Другая страна' && CITIES[country.value]) {
           cityOtherWrap.style.display = citySel.value === 'Другой город' ? '' : 'none';
         }
         var c = country.value === 'Другая страна' ? (val('f-other') || 'Другая страна') : (country.value || '—');
