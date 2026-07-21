@@ -69,6 +69,13 @@
     .grid .tile:nth-child(1){animation-delay:.05s}.grid .tile:nth-child(2){animation-delay:.12s}
     .grid .tile:nth-child(3){animation-delay:.19s}.grid .tile:nth-child(4){animation-delay:.26s}
     .grid .tile:nth-child(5){animation-delay:.33s}.grid .tile:nth-child(6){animation-delay:.40s}
+    .grid .tile:nth-child(7){animation-delay:.47s}
+    /* широкая плитка «маркетинг-план» */
+    .tile.wide-tile{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px;background:linear-gradient(150deg,#ffffffdc,#eaf7ffcc);border-color:#ffffffe6}
+    .tile.wide-tile div{flex:1;min-width:0}
+    .tile.wide-tile b{display:block;font-size:15.5px;margin-bottom:2px}
+    .tile.wide-tile span{display:block;min-height:0;font-size:11px}
+    .wide-go{flex:none;color:var(--deep);font-size:19px;font-weight:900;min-height:0!important}
     .bottom .wa{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
     @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa{animation:none}}
     .tile:focus-visible,.btn:focus-visible,.wa:focus-visible,.prod:focus-visible,.x:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
@@ -132,6 +139,52 @@
     .rev p{font-size:13px;line-height:1.5;color:#2c556d;margin:0}
     .rev-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:10px}
     .rev-video{display:block;width:100%;max-height:420px;border-radius:12px;background:#062f44;object-fit:contain}
+    /* маркетинг-план */
+    .mp-lead{background:linear-gradient(160deg,#e8f6ff,#d6ecfa);border-radius:16px;padding:14px 16px;margin-bottom:16px;box-shadow:inset 0 1px 0 #fff}
+    .mp-lead p{margin:0;color:#2c556d;font-size:13.5px;line-height:1.55}
+    .mp-lead p+p{margin-top:8px}
+    .mp-h{display:flex;align-items:center;gap:9px;margin:22px 0 10px}
+    .mp-h:first-of-type{margin-top:4px}
+    .mp-n{flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(160deg,#19b5ea,#00618e);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 7px #00618e3d}
+    .mp-h b{font-family:Lora,serif;font-size:16.5px;font-weight:600;line-height:1.25}
+    .mp-body{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0 0 10px}
+    .mp-body b{color:var(--ink)}
+    /* карточки-факты */
+    .mp-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 4px}
+    .mp-facts div{background:linear-gradient(160deg,#f4fbff,#e7f4fc);border-radius:13px;padding:10px 12px;font-size:11.5px;line-height:1.4;color:var(--muted);box-shadow:inset 0 1px 0 #fff}
+    .mp-facts b{display:block;font-family:Lora,serif;font-size:14px;color:var(--ink);margin-bottom:2px}
+    /* схема двух веток */
+    .mp-tree{background:linear-gradient(160deg,#f4fbff,#e7f4fc);border-radius:16px;padding:14px 10px 10px;margin:10px 0;text-align:center;box-shadow:inset 0 1px 0 #fff}
+    .mp-tree svg{width:100%;max-width:280px;height:auto}
+    .mp-tree p{margin:8px 6px 0;font-size:11.5px;color:var(--muted);line-height:1.4}
+    /* таблица шагов */
+    .mp-table{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13px}
+    .mp-table th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:900;padding:0 0 6px}
+    .mp-table th:last-child,.mp-table td:last-child{text-align:right}
+    .mp-table td{padding:8px 0;border-top:1px solid var(--line)}
+    .mp-table td:first-child{color:var(--muted)}
+    .mp-table td:last-child{font-weight:900;color:var(--deep2);white-space:nowrap}
+    .mp-table tr:first-child td{border-top:0}
+    /* лестница уровней */
+    .mp-steps{list-style:none;margin:8px 0 6px;padding:0}
+    .mp-steps li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+    .mp-steps li:first-child{border-top:0}
+    .mp-steps i{flex:none;font-style:normal;width:22px;height:22px;border-radius:50%;background:#dcf0fb;color:var(--deep2);font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+    .mp-steps b{font-weight:900;color:var(--ink)}
+    .mp-steps span{margin-left:auto;text-align:right;color:var(--muted);font-size:11.5px;white-space:nowrap}
+    .mp-steps .big{color:var(--deep2);font-weight:900;font-size:12.5px}
+    /* распределение денег */
+    .mp-money{display:flex;align-items:center;gap:14px;background:linear-gradient(160deg,#f4fbff,#e7f4fc);border-radius:16px;padding:14px;margin:10px 0 4px;box-shadow:inset 0 1px 0 #fff}
+    .mp-pie{flex:none;width:96px;height:96px;border-radius:50%;background:conic-gradient(#087cb2 0 45%,#19b5ea 45% 80%,#7fd4f2 80% 90%,#b9ebfb 90% 98%,#f0b840 98% 100%);box-shadow:0 6px 14px #07517226,inset 0 0 0 8px #ffffff70}
+    .mp-legend{flex:1;min-width:0;list-style:none;margin:0;padding:0;font-size:11.5px;line-height:1.35;color:var(--muted)}
+    .mp-legend li{display:flex;align-items:flex-start;gap:7px;padding:3px 0}
+    .mp-legend i{flex:none;width:10px;height:10px;border-radius:3px;margin-top:3px}
+    .mp-legend b{color:var(--ink);font-weight:900}
+    /* итоговая плашка + дисклеймер */
+    .mp-cta{background:linear-gradient(160deg,#19b5ea,#087cb2 60%,#00618e);color:#fff;border-radius:16px;padding:15px 16px;margin-top:18px;box-shadow:0 8px 18px #0574aa33,inset 0 1px 0 #ffffff55}
+    .mp-cta b{display:block;font-family:Lora,serif;font-size:16px;font-weight:600;margin-bottom:5px}
+    .mp-cta p{margin:0;font-size:12.5px;line-height:1.5;color:#e6f7ff}
+    .mp-note{font-size:11px;line-height:1.5;color:#8aa3b0;margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line)}
     /* доставка */
     .dlv{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .dlv:last-of-type{margin-bottom:0}
@@ -234,6 +287,11 @@
       <button class="tile" data-m="m-map">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
         <b>Центр в Актау</b><span>Карта, маршрут и график работы</span>
+      </button>
+      <button class="tile wide-tile" data-m="m-plan">
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 24h16" stroke="#fffdf8" stroke-width="2" stroke-linecap="round"/><rect x="11" y="16" width="3.6" height="6" rx="1.4" fill="#fffdf8"/><rect x="16.2" y="12" width="3.6" height="10" rx="1.4" fill="#fffdf8"/><rect x="21.4" y="8" width="3.6" height="14" rx="1.4" fill="#fffdf8"/></svg>
+        <div><b>Как устроен бизнес Atomy</b><span>Маркетинг-план простыми словами: баллы, две ветки, выплаты</span></div>
+        <span class="wide-go">→</span>
       </button>
     </nav>
 
@@ -413,6 +471,105 @@
         <div class="socials" style="justify-content:flex-start">
           <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram @magda.atomy</a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ МАРКЕТИНГ-ПЛАН ═══ -->
+  <div class="modal" id="m-plan" role="dialog" aria-modal="true" aria-labelledby="t-plan">
+    <div class="modal-bg" data-close></div>
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="t-plan">Как устроен бизнес Atomy</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-body">
+        <div class="mp-lead">
+          <p><b>Если коротко:</b> Atomy — это корейский интернет-магазин с клубной системой. Вы регистрируетесь бесплатно и покупаете продукцию для себя по ценам участника.</p>
+          <p>А если продукция понравилась и вы рассказали о ней знакомым — компания делится с вами частью денег с их покупок. Обязательных закупок и планов продаж нет: можно всю жизнь просто покупать для себя.</p>
+        </div>
+
+        <div class="mp-h"><span class="mp-n">1</span><b>Баллы вместо процентов</b></div>
+        <p class="mp-body">У каждого товара, кроме цены, есть <b>баллы (ПВ)</b>. Именно из баллов считается вознаграждение — так во всех странах сумма получается одинаково справедливой.</p>
+        <div class="mp-facts">
+          <div><b>Личные баллы</b>ваши покупки</div>
+          <div><b>Групповые</b>покупки вашей команды</div>
+          <div><b>Не сгорают</b>копятся без срока</div>
+          <div><b>100%</b>учитывается вся покупка</div>
+        </div>
+
+        <div class="mp-h"><span class="mp-n">2</span><b>Первый шаг — 10 000 личных баллов</b></div>
+        <p class="mp-body">Это единственное условие, чтобы участвовать в выплатах. Накопить их можно постепенно, своими обычными покупками — баллы никогда не сгорают. Один раз набрали — и всё, дальше условие выполнено навсегда.</p>
+
+        <div class="mp-h"><span class="mp-n">3</span><b>Две ветки — левая и правая</b></div>
+        <p class="mp-body">У каждого участника есть <b>всего два места</b> в команде: левая ветка и правая. Всех следующих людей вы (и ваша команда) размещаете под ними — вглубь без ограничений.</p>
+        <div class="mp-tree">
+          <svg viewBox="0 0 280 132" aria-hidden="true">
+            <path d="M140 34 L70 66 M140 34 L210 66 M70 78 L36 108 M70 78 L104 108 M210 78 L176 108 M210 78 L244 108" stroke="#9edff5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="140" cy="22" r="15" fill="url(#g-green)"/><text x="140" y="27" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="Lato,Arial">ВЫ</text>
+            <circle cx="70" cy="72" r="13" fill="#19b5ea"/><text x="70" y="76" text-anchor="middle" font-size="9" font-weight="900" fill="#fff" font-family="Lato,Arial">Л</text>
+            <circle cx="210" cy="72" r="13" fill="#19b5ea"/><text x="210" y="76" text-anchor="middle" font-size="9" font-weight="900" fill="#fff" font-family="Lato,Arial">П</text>
+            <circle cx="36" cy="116" r="10" fill="#b9ebfb"/><circle cx="104" cy="116" r="10" fill="#b9ebfb"/>
+            <circle cx="176" cy="116" r="10" fill="#b9ebfb"/><circle cx="244" cy="116" r="10" fill="#b9ebfb"/>
+          </svg>
+          <p>Люди, которых приводят ваши партнёры, тоже попадают в ваши ветки — команда растёт и без вашего участия.</p>
+        </div>
+
+        <div class="mp-h"><span class="mp-n">4</span><b>Выплата — за «шаг»</b></div>
+        <p class="mp-body">Когда в обеих ветках набирается нужный объём баллов, происходит <b>бинарный шаг</b> — и компания выплачивает вознаграждение. Баллы копятся сколько угодно долго и не сгорают, поэтому шаг рано или поздно закрывается у каждого. В день засчитывается максимум один шаг.</p>
+        <table class="mp-table">
+          <tr><th>Объём баллов</th><th>Выплата</th></tr>
+          <tr><td>300 000 PV</td><td>21 000 ₸</td></tr>
+          <tr><td>700 000 PV</td><td>42 000 ₸</td></tr>
+          <tr><td>1 500 000 PV</td><td>84 000 ₸</td></tr>
+          <tr><td>2 400 000 PV</td><td>126 000 ₸</td></tr>
+          <tr><td>6 000 000 PV</td><td>210 000 ₸</td></tr>
+          <tr><td>20 000 000 PV</td><td>350 000 ₸</td></tr>
+          <tr><td>50 000 000 PV</td><td>420 000 ₸</td></tr>
+        </table>
+        <p class="mp-body" style="font-size:12px">Чем выше ваш уровень участника (ниже), тем более крупные шаги вам доступны.</p>
+
+        <div class="mp-h"><span class="mp-n">5</span><b>Пять уровней участника</b></div>
+        <p class="mp-body">Уровень зависит от накопленных баллов — личных или вдвое больших групповых. Ничего покупать «для статуса» не нужно, всё считается само.</p>
+        <ul class="mp-steps">
+          <li><i>1</i><b>Торговый представитель</b><span>10 000 баллов</span></li>
+          <li><i>2</i><b>Агент</b><span>300 000</span></li>
+          <li><i>3</i><b>Специальный агент</b><span>700 000</span></li>
+          <li><i>4</i><b>Дилер</b><span>1 500 000</span></li>
+          <li><i>5</i><b>Эксклюзивный дистрибьютор</b><span>2 400 000</span></li>
+        </ul>
+
+        <div class="mp-h"><span class="mp-n">6</span><b>Семь уровней мастерства</b></div>
+        <p class="mp-body">Это «звания» за сильную команду: первое из них — <b>Мастер продаж</b> — даётся, когда в левой и правой ветке набирается по 2 500 000 баллов. Дальше уровни растут вместе с командой, а к вознаграждению добавляются подарки и поездки от компании.</p>
+        <ul class="mp-steps">
+          <li><i>1</i><b>Мастер продаж</b><span class="big">750 000 ₸</span></li>
+          <li><i>2</i><b>Бриллиантовый мастер</b><span class="big">2 500 000 ₸</span></li>
+          <li><i>3</i><b>Мастер Шаронской розы</b><span class="big">6 000 000 ₸</span></li>
+          <li><i>4</i><b>Стар мастер</b><span class="big">12 500 000 ₸</span></li>
+          <li><i>5</i><b>Роял мастер</b><span class="big">25 000 000 ₸</span></li>
+          <li><i>6</i><b>Краун мастер</b><span class="big">40 000 000 ₸</span></li>
+          <li><i>7</i><b>Империал мастер</b><span class="big">100 000 000 ₸</span></li>
+        </ul>
+        <p class="mp-body" style="font-size:12px">Суммы — примерный доход за месяц по маркетинг-плану компании: шаги плюс бонус за уровень.</p>
+
+        <div class="mp-h"><span class="mp-n">7</span><b>Откуда берутся эти деньги</b></div>
+        <p class="mp-body">У Atomy нет посредников, магазинов и дорогой рекламы — эти расходы компания отдаёт людям, которые рассказывают о продукции.</p>
+        <div class="mp-money">
+          <div class="mp-pie" aria-hidden="true"></div>
+          <ul class="mp-legend">
+            <li><i style="background:#087cb2"></i><span><b>45%</b> — себестоимость продукции</span></li>
+            <li><i style="background:#19b5ea"></i><span><b>35%</b> — выплаты участникам</span></li>
+            <li><i style="background:#7fd4f2"></i><span><b>10%</b> — налоги</span></li>
+            <li><i style="background:#b9ebfb"></i><span><b>8%</b> — сама компания</span></li>
+            <li><i style="background:#f0b840"></i><span><b>2%</b> — благотворительность</span></li>
+          </ul>
+        </div>
+
+        <div class="mp-cta">
+          <b>Что делать, если интересно</b>
+          <p>1. Разобраться — я объясню всё простыми словами.<br>2. Попробовать продукцию на себе.<br>3. Рассказать тем, кому она тоже пригодится.</p>
+        </div>
+
+        <p class="mp-note">Цифры приведены из официального маркетинг-плана Atomy и не являются обещанием дохода: результат зависит от того, сколько людей пользуется продукцией. Регистрация бесплатная, обязательных закупок и вступительных взносов нет. Вознаграждение платит компания Atomy, а не участники.</p>
+
+        <button class="btn solid" style="margin-top:14px" data-m="m-form">Хочу зарегистрироваться <span>→</span></button>
       </div>
     </div>
   </div>

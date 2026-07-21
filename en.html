@@ -69,6 +69,13 @@
     .grid .tile:nth-child(1){animation-delay:.05s}.grid .tile:nth-child(2){animation-delay:.12s}
     .grid .tile:nth-child(3){animation-delay:.19s}.grid .tile:nth-child(4){animation-delay:.26s}
     .grid .tile:nth-child(5){animation-delay:.33s}.grid .tile:nth-child(6){animation-delay:.40s}
+    .grid .tile:nth-child(7){animation-delay:.47s}
+    /* широкая плитка «маркетинг-план» */
+    .tile.wide-tile{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px;background:linear-gradient(150deg,#ffffffdc,#eaf7ffcc);border-color:#ffffffe6}
+    .tile.wide-tile div{flex:1;min-width:0}
+    .tile.wide-tile b{display:block;font-size:15.5px;margin-bottom:2px}
+    .tile.wide-tile span{display:block;min-height:0;font-size:11px}
+    .wide-go{flex:none;color:var(--deep);font-size:19px;font-weight:900;min-height:0!important}
     .bottom .wa{animation:rise .5s cubic-bezier(.2,.7,.3,1) .4s both}
     @media(prefers-reduced-motion:reduce){.grid .tile,.bottom .wa{animation:none}}
     .tile:focus-visible,.btn:focus-visible,.wa:focus-visible,.prod:focus-visible,.x:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
@@ -132,6 +139,52 @@
     .rev p{font-size:13px;line-height:1.5;color:#2c556d;margin:0}
     .rev-photo{display:block;width:100%;height:auto;border-radius:12px;margin-top:10px}
     .rev-video{display:block;width:100%;max-height:420px;border-radius:12px;background:#062f44;object-fit:contain}
+    /* маркетинг-план */
+    .mp-lead{background:linear-gradient(160deg,#e8f6ff,#d6ecfa);border-radius:16px;padding:14px 16px;margin-bottom:16px;box-shadow:inset 0 1px 0 #fff}
+    .mp-lead p{margin:0;color:#2c556d;font-size:13.5px;line-height:1.55}
+    .mp-lead p+p{margin-top:8px}
+    .mp-h{display:flex;align-items:center;gap:9px;margin:22px 0 10px}
+    .mp-h:first-of-type{margin-top:4px}
+    .mp-n{flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(160deg,#19b5ea,#00618e);color:#fff;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 7px #00618e3d}
+    .mp-h b{font-family:Lora,serif;font-size:16.5px;font-weight:600;line-height:1.25}
+    .mp-body{font-size:13.5px;line-height:1.55;color:var(--muted);margin:0 0 10px}
+    .mp-body b{color:var(--ink)}
+    /* карточки-факты */
+    .mp-facts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 4px}
+    .mp-facts div{background:linear-gradient(160deg,#f4fbff,#e7f4fc);border-radius:13px;padding:10px 12px;font-size:11.5px;line-height:1.4;color:var(--muted);box-shadow:inset 0 1px 0 #fff}
+    .mp-facts b{display:block;font-family:Lora,serif;font-size:14px;color:var(--ink);margin-bottom:2px}
+    /* схема двух веток */
+    .mp-tree{background:linear-gradient(160deg,#f4fbff,#e7f4fc);border-radius:16px;padding:14px 10px 10px;margin:10px 0;text-align:center;box-shadow:inset 0 1px 0 #fff}
+    .mp-tree svg{width:100%;max-width:280px;height:auto}
+    .mp-tree p{margin:8px 6px 0;font-size:11.5px;color:var(--muted);line-height:1.4}
+    /* таблица шагов */
+    .mp-table{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13px}
+    .mp-table th{text-align:left;font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:900;padding:0 0 6px}
+    .mp-table th:last-child,.mp-table td:last-child{text-align:right}
+    .mp-table td{padding:8px 0;border-top:1px solid var(--line)}
+    .mp-table td:first-child{color:var(--muted)}
+    .mp-table td:last-child{font-weight:900;color:var(--deep2);white-space:nowrap}
+    .mp-table tr:first-child td{border-top:0}
+    /* лестница уровней */
+    .mp-steps{list-style:none;margin:8px 0 6px;padding:0}
+    .mp-steps li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+    .mp-steps li:first-child{border-top:0}
+    .mp-steps i{flex:none;font-style:normal;width:22px;height:22px;border-radius:50%;background:#dcf0fb;color:var(--deep2);font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+    .mp-steps b{font-weight:900;color:var(--ink)}
+    .mp-steps span{margin-left:auto;text-align:right;color:var(--muted);font-size:11.5px;white-space:nowrap}
+    .mp-steps .big{color:var(--deep2);font-weight:900;font-size:12.5px}
+    /* распределение денег */
+    .mp-money{display:flex;align-items:center;gap:14px;background:linear-gradient(160deg,#f4fbff,#e7f4fc);border-radius:16px;padding:14px;margin:10px 0 4px;box-shadow:inset 0 1px 0 #fff}
+    .mp-pie{flex:none;width:96px;height:96px;border-radius:50%;background:conic-gradient(#087cb2 0 45%,#19b5ea 45% 80%,#7fd4f2 80% 90%,#b9ebfb 90% 98%,#f0b840 98% 100%);box-shadow:0 6px 14px #07517226,inset 0 0 0 8px #ffffff70}
+    .mp-legend{flex:1;min-width:0;list-style:none;margin:0;padding:0;font-size:11.5px;line-height:1.35;color:var(--muted)}
+    .mp-legend li{display:flex;align-items:flex-start;gap:7px;padding:3px 0}
+    .mp-legend i{flex:none;width:10px;height:10px;border-radius:3px;margin-top:3px}
+    .mp-legend b{color:var(--ink);font-weight:900}
+    /* итоговая плашка + дисклеймер */
+    .mp-cta{background:linear-gradient(160deg,#19b5ea,#087cb2 60%,#00618e);color:#fff;border-radius:16px;padding:15px 16px;margin-top:18px;box-shadow:0 8px 18px #0574aa33,inset 0 1px 0 #ffffff55}
+    .mp-cta b{display:block;font-family:Lora,serif;font-size:16px;font-weight:600;margin-bottom:5px}
+    .mp-cta p{margin:0;font-size:12.5px;line-height:1.5;color:#e6f7ff}
+    .mp-note{font-size:11px;line-height:1.5;color:#8aa3b0;margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line)}
     /* доставка */
     .dlv{display:flex;gap:14px;align-items:flex-start;background:linear-gradient(160deg,#f4f8f3,#e9efe7);border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:inset 0 1px 0 #fff}
     .dlv:last-of-type{margin-bottom:0}
@@ -235,6 +288,11 @@
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
         <b>Center in Aktau</b><span>Map, directions and hours</span>
       </button>
+      <button class="tile wide-tile" data-m="m-plan">
+        <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 24h16" stroke="#fffdf8" stroke-width="2" stroke-linecap="round"/><rect x="11" y="16" width="3.6" height="6" rx="1.4" fill="#fffdf8"/><rect x="16.2" y="12" width="3.6" height="10" rx="1.4" fill="#fffdf8"/><rect x="21.4" y="8" width="3.6" height="14" rx="1.4" fill="#fffdf8"/></svg>
+        <div><b>How the Atomy business works</b><span>The marketing plan in plain words: points, two legs, payouts</span></div>
+        <span class="wide-go">→</span>
+      </button>
     </nav>
 
     <div class="bottom">
@@ -246,7 +304,7 @@
   <div class="modal" id="m-products" role="dialog" aria-modal="true" aria-labelledby="t-products">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-products">Favorite products</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-products">Favorite products</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <p style="margin-bottom:6px">Most people get to know Atomy through these very products. Tap a product to see its description.</p>
         <button class="prod" data-m="p-hemohim"><img src="assets/hemohim.webp" alt=""><div><b>HemoHIM</b><span>Atomy's #1 signature product</span></div><span class="go">→</span></button>
@@ -263,7 +321,7 @@
   <div class="modal" id="p-hemohim" role="dialog" aria-modal="true" aria-labelledby="tp-hemohim">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-hemohim">Atomy HemoHIM</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-hemohim">Atomy HemoHIM</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/hemohim.webp" alt="HemoHIM"></div>
         <p>Atomy's #1 signature product, developed by Korean scientists together with the Korea Atomic Energy Research Institute. It is based on extracts of three plants: Angelica gigas root, Bupleurum and white peony.</p>
@@ -276,7 +334,7 @@
   <div class="modal" id="p-paste" role="dialog" aria-modal="true" aria-labelledby="tp-paste">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-paste">Atomy Toothpaste</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-paste">Atomy Toothpaste</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/paste.webp" alt="Toothpaste"></div>
         <p>A set of five large 200 g tubes of Atomy's signature propolis toothpaste. It gently cleans teeth, freshens breath and helps keep gums healthy.</p>
@@ -288,7 +346,7 @@
   <div class="modal" id="p-probiotic" role="dialog" aria-modal="true" aria-labelledby="tp-probiotic">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-probiotic">Atomy Probiotics 10+</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-probiotic">Atomy Probiotics 10+</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/probiotic.webp" alt="Probiotics 10+"></div>
         <p>A blend of beneficial bacteria with prebiotics in single-serve sticks. Each stick contains billions of live lactobacteria that support microflora balance and comfortable digestion every day.</p>
@@ -300,7 +358,7 @@
   <div class="modal" id="p-vitaminc" role="dialog" aria-modal="true" aria-labelledby="tp-vitaminc">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-vitaminc">Atomy Vitamin C</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-vitaminc">Atomy Vitamin C</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/vitaminc.webp" alt="Vitamin C"></div>
         <p>Vitamin C in single-serve sticks with a bright citrus taste — daily immune support for adults and kids. Each stick is a ready portion, nothing to measure.</p>
@@ -312,7 +370,7 @@
   <div class="modal" id="p-arabica" role="dialog" aria-modal="true" aria-labelledby="tp-arabica">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="tp-arabica">Atomy Arabica Coffee</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="tp-arabica">Atomy Arabica Coffee</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="p-hero"><img src="assets/arabica.webp" alt="Arabica Coffee"></div>
         <p>Instant coffee made from 100% arabica beans — a smooth, balanced taste with no bitterness or excess acidity. The box holds 50 single-serve sticks: one stick — one cup, nothing to measure.</p>
@@ -325,7 +383,7 @@
   <div class="modal" id="m-delivery" role="dialog" aria-modal="true" aria-labelledby="t-delivery">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-delivery">Delivery</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-delivery">Delivery</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="dlv">
           <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M17 7.5c-3.6 0-6.5 2.9-6.5 6.5 0 4.9 6.5 12.5 6.5 12.5s6.5-7.6 6.5-12.5c0-3.6-2.9-6.5-6.5-6.5z" fill="#b9ebfb"/><circle cx="17" cy="14" r="2.6" fill="#00618e"/></svg>
@@ -343,7 +401,7 @@
   <div class="modal" id="m-map" role="dialog" aria-modal="true" aria-labelledby="t-map">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-map">Center in Aktau</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-map">Center in Aktau</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <a class="map-wrap" href="https://2gis.kz/aktau/inside/70030076138753224/firm/70000001078996125?m=51.161271%2C43.640398%2F20" target="_blank" rel="noopener">
           <img src="assets/map.png" alt="Map: Atomy Altyn-Arman center, Aktau, 5th microdistrict 14/2">
@@ -373,7 +431,7 @@
   <div class="modal" id="m-reg" role="dialog" aria-modal="true" aria-labelledby="t-reg">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-reg">How to get access</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-reg">How to get access</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="dlv" style="margin-bottom:14px">
           <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-green)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><circle cx="17" cy="17" r="8.5" fill="none" stroke="#b9ebfb" stroke-width="2"/><ellipse cx="17" cy="17" rx="4" ry="8.5" fill="none" stroke="#b9ebfb" stroke-width="1.6"/><path d="M9 14h16M9 20h16" stroke="#b9ebfb" stroke-width="1.6"/></svg>
@@ -399,7 +457,7 @@
   <div class="modal" id="m-about" role="dialog" aria-modal="true" aria-labelledby="t-about">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-about">My name is Magda 💙</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-about">My name is Magda 💙</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <p class="kick">Nice to meet you!</p>
         <p>I have been using Atomy products for 5 years and help people get to know them calmly — no pushing, no loud promises, no extra advertising.</p>
@@ -417,11 +475,110 @@
     </div>
   </div>
 
+  <!-- ═══ МАРКЕТИНГ-ПЛАН ═══ -->
+  <div class="modal" id="m-plan" role="dialog" aria-modal="true" aria-labelledby="t-plan">
+    <div class="modal-bg" data-close></div>
+    <div class="sheet">
+      <div class="sheet-head"><h2 id="t-plan">How the Atomy business works</h2><button class="x" data-close aria-label="Close">✕</button></div>
+      <div class="sheet-body">
+        <div class="mp-lead">
+          <p><b>In short:</b> Atomy is a Korean online store with a membership system. You register for free and buy products for yourself at member prices.</p>
+          <p>And if you like the products and tell your friends about them, the company shares part of the money from their purchases with you. There are no mandatory purchases and no sales targets: you can simply keep buying for yourself.</p>
+        </div>
+
+        <div class="mp-h"><span class="mp-n">1</span><b>Points instead of percentages</b></div>
+        <p class="mp-body">Besides its price, every product has <b>points (PV)</b>. Rewards are calculated from those points, so the amount is equally fair in every country.</p>
+        <div class="mp-facts">
+          <div><b>Personal points</b>your own purchases</div>
+          <div><b>Group points</b>your team&#39;s purchases</div>
+          <div><b>Never expire</b>they just keep adding up</div>
+          <div><b>100%</b>every purchase counts in full</div>
+        </div>
+
+        <div class="mp-h"><span class="mp-n">2</span><b>First step — 10,000 personal points</b></div>
+        <p class="mp-body">This is the only requirement to take part in payouts. You can reach it gradually with your usual purchases — points never expire. Once you get there, the condition is met for good.</p>
+
+        <div class="mp-h"><span class="mp-n">3</span><b>Two legs — left and right</b></div>
+        <p class="mp-body">Every member has <b>just two places</b> in the team: a left leg and a right one. Everyone who joins after that is placed below them — with no limit on depth.</p>
+        <div class="mp-tree">
+          <svg viewBox="0 0 280 132" aria-hidden="true">
+            <path d="M140 34 L70 66 M140 34 L210 66 M70 78 L36 108 M70 78 L104 108 M210 78 L176 108 M210 78 L244 108" stroke="#9edff5" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="140" cy="22" r="15" fill="url(#g-green)"/><text x="140" y="27" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="Lato,Arial">ВЫ</text>
+            <circle cx="70" cy="72" r="13" fill="#19b5ea"/><text x="70" y="76" text-anchor="middle" font-size="9" font-weight="900" fill="#fff" font-family="Lato,Arial">Л</text>
+            <circle cx="210" cy="72" r="13" fill="#19b5ea"/><text x="210" y="76" text-anchor="middle" font-size="9" font-weight="900" fill="#fff" font-family="Lato,Arial">П</text>
+            <circle cx="36" cy="116" r="10" fill="#b9ebfb"/><circle cx="104" cy="116" r="10" fill="#b9ebfb"/>
+            <circle cx="176" cy="116" r="10" fill="#b9ebfb"/><circle cx="244" cy="116" r="10" fill="#b9ebfb"/>
+          </svg>
+          <p>People invited by your partners also land in your legs — the team keeps growing even without you.</p>
+        </div>
+
+        <div class="mp-h"><span class="mp-n">4</span><b>Payout — for a “step”</b></div>
+        <p class="mp-body">When both legs reach the required volume of points, a <b>binary step</b> is completed and the company pays a reward. Points accumulate for as long as needed and never expire, so sooner or later everyone closes a step. At most one step per day is counted.</p>
+        <table class="mp-table">
+          <tr><th>Points volume</th><th>Payout</th></tr>
+          <tr><td>300 000 PV</td><td>21 000 ₸</td></tr>
+          <tr><td>700 000 PV</td><td>42 000 ₸</td></tr>
+          <tr><td>1 500 000 PV</td><td>84 000 ₸</td></tr>
+          <tr><td>2 400 000 PV</td><td>126 000 ₸</td></tr>
+          <tr><td>6 000 000 PV</td><td>210 000 ₸</td></tr>
+          <tr><td>20 000 000 PV</td><td>350 000 ₸</td></tr>
+          <tr><td>50 000 000 PV</td><td>420 000 ₸</td></tr>
+        </table>
+        <p class="mp-body" style="font-size:12px">The higher your member level (below), the larger the steps available to you.</p>
+
+        <div class="mp-h"><span class="mp-n">5</span><b>Five member levels</b></div>
+        <p class="mp-body">Your level depends on accumulated points — personal ones, or twice as many group points. You never need to buy anything “for status”: it is all counted automatically.</p>
+        <ul class="mp-steps">
+          <li><i>1</i><b>Sales Representative</b><span>10,000 points</span></li>
+          <li><i>2</i><b>Agent</b><span>300 000</span></li>
+          <li><i>3</i><b>Special Agent</b><span>700 000</span></li>
+          <li><i>4</i><b>Dealer</b><span>1 500 000</span></li>
+          <li><i>5</i><b>Exclusive Distributor</b><span>2 400 000</span></li>
+        </ul>
+
+        <div class="mp-h"><span class="mp-n">6</span><b>Seven mastership levels</b></div>
+        <p class="mp-body">These are “titles” for building a strong team: the first one — <b>Sales Master</b> — is reached when each leg accumulates 2,500,000 points. Higher levels come with the team, and the reward is joined by gifts and trips from the company.</p>
+        <ul class="mp-steps">
+          <li><i>1</i><b>Sales Master</b><span class="big">750 000 ₸</span></li>
+          <li><i>2</i><b>Diamond Master</b><span class="big">2 500 000 ₸</span></li>
+          <li><i>3</i><b>Sharon Rose Master</b><span class="big">6 000 000 ₸</span></li>
+          <li><i>4</i><b>Star Master</b><span class="big">12 500 000 ₸</span></li>
+          <li><i>5</i><b>Royal Master</b><span class="big">25 000 000 ₸</span></li>
+          <li><i>6</i><b>Crown Master</b><span class="big">40 000 000 ₸</span></li>
+          <li><i>7</i><b>Imperial Master</b><span class="big">100 000 000 ₸</span></li>
+        </ul>
+        <p class="mp-body" style="font-size:12px">The amounts are the approximate monthly income under the company plan: steps plus the level bonus.</p>
+
+        <div class="mp-h"><span class="mp-n">7</span><b>Where this money comes from</b></div>
+        <p class="mp-body">Atomy has no middlemen, no shops and no expensive advertising — the company gives that budget to the people who spread the word about its products.</p>
+        <div class="mp-money">
+          <div class="mp-pie" aria-hidden="true"></div>
+          <ul class="mp-legend">
+            <li><i style="background:#087cb2"></i><span><b>45%</b> — product cost</span></li>
+            <li><i style="background:#19b5ea"></i><span><b>35%</b> — payouts to members</span></li>
+            <li><i style="background:#7fd4f2"></i><span><b>10%</b> — taxes</span></li>
+            <li><i style="background:#b9ebfb"></i><span><b>8%</b> — the company itself</span></li>
+            <li><i style="background:#f0b840"></i><span><b>2%</b> — charity</span></li>
+          </ul>
+        </div>
+
+        <div class="mp-cta">
+          <b>What to do if you are interested</b>
+          <p>1. Understand it — I will explain everything in plain words.<br>2. Try the products yourself.<br>3. Tell the people who would benefit too.</p>
+        </div>
+
+        <p class="mp-note">The figures come from the official Atomy marketing plan and are not a promise of income: the result depends on how many people use the products. Registration is free, with no mandatory purchases or entry fees. Rewards are paid by Atomy, not by other members.</p>
+
+        <button class="btn solid" style="margin-top:14px" data-m="m-form">I want to register <span>→</span></button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ ОТЗЫВЫ ═══ -->
   <div class="modal" id="m-reviews" role="dialog" aria-modal="true" aria-labelledby="t-reviews">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-reviews">Client reviews</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-reviews">Client reviews</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="rev">
           <div class="rev-head"><span class="rev-ava">K</span><div><b>Kristina</b><small>on HemoHIM · from our chat</small></div><span class="rev-stars">★★★★★</span></div>
@@ -453,7 +610,7 @@
   <div class="modal" id="m-form" role="dialog" aria-modal="true" aria-labelledby="t-form">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-form">Registration form</h2><button class="x" data-close aria-label="Закрыть">✕</button></div>
+      <div class="sheet-head"><h2 id="t-form">Registration form</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <p>Fill in the form — it will be sent via WhatsApp, and you will be registered in Atomy and helped with your first order.</p>
         <div class="field"><label for="f-name">Full name (middle name — if applicable)</label><input id="f-name" autocomplete="name" placeholder="e.g.: Aigul Akhmetova"></div>
