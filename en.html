@@ -192,6 +192,7 @@
     /* анкета */
     .field{margin-bottom:12px}
     .field label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:900;color:var(--muted);margin-bottom:5px}
+    .field label .optional{font-weight:400;letter-spacing:0;text-transform:none}
     .field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:15px;color:var(--ink);background:#fff;box-shadow:inset 0 2px 4px #17352b0a}
     .field input:focus,.field select:focus{outline:2px solid var(--gold-soft);border-color:var(--gold)}
     .phone-wrap{display:flex;align-items:stretch}
@@ -288,7 +289,7 @@
       </button>
       <button class="tile wide-tile" data-m="m-plan">
         <svg class="chip3d" viewBox="0 0 34 34"><rect x="1" y="1" width="32" height="32" rx="9" fill="url(#g-gold)"/><rect x="2.2" y="2.2" width="29.6" height="14" rx="7" fill="url(#g-shine)"/><path d="M9 24h16" stroke="#fffdf8" stroke-width="2" stroke-linecap="round"/><rect x="11" y="16" width="3.6" height="6" rx="1.4" fill="#fffdf8"/><rect x="16.2" y="12" width="3.6" height="10" rx="1.4" fill="#fffdf8"/><rect x="21.4" y="8" width="3.6" height="14" rx="1.4" fill="#fffdf8"/></svg>
-        <div><b>How the Atomy business works</b><span>The marketing plan in plain words: points, two legs, payouts</span></div>
+        <div><b>💙 How Atomy works</b><span>The marketing plan in plain words: points, two legs, payouts</span></div>
         <span class="wide-go">→</span>
       </button>
     </nav>
@@ -459,12 +460,12 @@
       <div class="sheet-body">
         <p class="kick">Nice to meet you!</p>
         <p>I have been using Atomy products for 5 years and help people get to know them calmly — no pushing, no loud promises, no extra advertising.</p>
-        <p>It matters to me that a person makes an informed choice. So I don't recommend everything in a row and don't claim to know it all. I share what I use myself, my family's experience and feedback from people I trust. If I don't know something, I'll say so honestly.</p>
+        <p>I don't recommend everything or pretend to have an answer to every question. I share what I use myself, what my family buys, and feedback from people I trust. If I don't know something, I'll check first.</p>
         <p>If you are just getting to know Atomy, I'll help you navigate the range, answer your questions and show you how to buy at member prices.</p>
-        <div class="quote">I believe trust is built on honesty. So here you'll find only sincere recommendations, calm advice and a genuine wish to help you find what truly suits you.</div>
+        <div class="quote">I don't like giving advice at random. I only talk about what I know myself or can verify.</div>
         <p class="kick" style="margin-top:18px">Mini-blog</p>
         <p>Here I share personal experience, useful finds and simple tips on health, beauty and self-care.</p>
-        <p>No extra noise. Only the things worth sharing with the people close to you.</p>
+        <p>I only show what I would be happy to share with those close to me.</p>
         <p style="font-weight:700;color:var(--ink)">Welcome! 🌿</p>
         <div class="socials" style="justify-content:flex-start">
           <a class="soc" href="https://www.instagram.com/magda.atomy/" target="_blank" rel="noopener"><i class="ig">📸</i>Instagram @magda.atomy</a>
@@ -477,7 +478,7 @@
   <div class="modal" id="m-plan" role="dialog" aria-modal="true" aria-labelledby="t-plan">
     <div class="modal-bg" data-close></div>
     <div class="sheet">
-      <div class="sheet-head"><h2 id="t-plan">How the Atomy business works</h2><button class="x" data-close aria-label="Close">✕</button></div>
+      <div class="sheet-head"><h2 id="t-plan">Atomy marketing plan, in plain language</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <div class="mp-lead">
           <p><b>In short:</b> Atomy is a Korean online store with a membership system. You register for free and buy products for yourself at member prices.</p>
@@ -494,7 +495,7 @@
         </div>
 
         <div class="mp-h"><span class="mp-n">2</span><b>First step — 10,000 personal points</b></div>
-        <p class="mp-body">This is the only requirement to take part in payouts. You can reach it gradually with your usual purchases — points never expire. Once you get there, the condition is met for good.</p>
+        <p class="mp-body">This is the only requirement to take part in payouts. You can reach personal PV gradually through your regular purchases; they never expire. Once you reach 10,000 PV, the condition is met for good.</p>
 
         <div class="mp-h"><span class="mp-n">3</span><b>Two legs — left and right</b></div>
         <p class="mp-body">Every member has <b>just two places</b> in the team: a left leg and a right one. Everyone who joins after that is placed below them — with no limit on depth.</p>
@@ -511,7 +512,7 @@
         </div>
 
         <div class="mp-h"><span class="mp-n">4</span><b>Payout — for a “step”</b></div>
-        <p class="mp-body">When both legs reach the required volume of points, a <b>binary step</b> is completed and the company pays a reward. Points accumulate for as long as needed and never expire, so sooner or later everyone closes a step. At most one step per day is counted.</p>
+        <p class="mp-body">When both legs reach the required PV volume, a <b>binary step</b> is completed and the company pays a reward. PV in the legs can carry forward until the volume needed for a step is reached. At most one step per day is counted.</p>
         <table class="mp-table">
           <tr><th>Points volume</th><th>Payout</th></tr>
           <tr><td>300 000 PV</td><td>21 000 ₸</td></tr>
@@ -525,7 +526,7 @@
         <p class="mp-body" style="font-size:12px">The higher your member level (below), the larger the steps available to you.</p>
 
         <div class="mp-h"><span class="mp-n">5</span><b>Five member levels</b></div>
-        <p class="mp-body">Your level depends on accumulated points — personal ones, or twice as many group points. You never need to buy anything “for status”: it is all counted automatically.</p>
+        <p class="mp-body">A member level is determined by personal PV or twice the group PV, according to the marketing plan rules. You never need to buy anything “for status”: it is all counted automatically.</p>
         <ul class="mp-steps">
           <li><i>1</i><b>Sales Representative</b><span>10,000 points</span></li>
           <li><i>2</i><b>Agent</b><span>300 000</span></li>
@@ -535,7 +536,7 @@
         </ul>
 
         <div class="mp-h"><span class="mp-n">6</span><b>Seven mastership levels</b></div>
-        <p class="mp-body">These are “titles” for building a strong team: the first one — <b>Sales Master</b> — is reached when each leg accumulates 2,500,000 points. Higher levels come with the team, and the reward is joined by gifts and trips from the company.</p>
+        <p class="mp-body">Mastership levels are counted separately: the required volume must be reached within one qualification period, not accumulated over years. The first level — <b>Sales Master</b> — is awarded when each leg reaches 2,500,000 PV during that period. In a new period, the mastership volume is counted from scratch; rewards also include gifts and trips from the company.</p>
         <ul class="mp-steps">
           <li><i>1</i><b>Sales Master</b><span class="big">750 000 ₸</span></li>
           <li><i>2</i><b>Diamond Master</b><span class="big">2 500 000 ₸</span></li>
@@ -606,7 +607,7 @@
       <div class="sheet-head"><h2 id="t-form">Registration form</h2><button class="x" data-close aria-label="Close">✕</button></div>
       <div class="sheet-body">
         <p>Fill in the form — it will be sent via WhatsApp, and you will be registered in Atomy and helped with your first order.</p>
-        <div class="field"><label for="f-name">Full name (middle name — if applicable)</label><input id="f-name" autocomplete="name" placeholder="e.g.: Aigul Akhmetova"></div>
+        <div class="field"><label for="f-name">Surname, first name, middle name <span class="optional">(if applicable)</span></label><input id="f-name" autocomplete="name" placeholder="e.g.: Aigul Akhmetova Serikovna"></div>
         <div class="field"><label for="f-phone">Phone / WhatsApp</label>
           <div class="phone-wrap"><span class="pfx">+7</span><input id="f-phone" autocomplete="off" inputmode="numeric" maxlength="10" placeholder="701 123 45 67"></div>
         </div>
@@ -638,8 +639,9 @@
         </div>
         <div class="field" id="f-city-other-wrap" style="display:none"><label for="f-city-other">Enter your city</label><input id="f-city-other" autocomplete="off" placeholder="e.g.: Zhanaozen"></div>
         <div class="field"><label for="f-birth">Date of birth</label><input id="f-birth" autocomplete="off" inputmode="numeric" placeholder="DD.MM.YYYY"></div>
-        <div class="field"><label for="f-iin">IIN — optional</label><input id="f-iin" autocomplete="off" inputmode="numeric" placeholder="12 digits (may be left empty)">
-          <div class="hint">IIN is optional: it is only needed if you want to run a business and earn reward points in Atomy. For regular purchases the date of birth is enough.</div>
+        <div class="field"><label for="f-iin">IIN <span class="optional">(recommended)</span></label><input id="f-iin" autocomplete="off" inputmode="numeric" placeholder="12 digits (may be left empty)">
+          <div class="hint"><b>An IIN is not required for purchases.</b> If you plan to build Atomy and receive rewards later, it is easier to provide it now.</div>
+          <div class="hint">The form will be sent to Magda on WhatsApp to complete your Atomy registration. Leave the IIN blank if you are not ready to send it via WhatsApp.</div>
         </div>
         <a class="btn solid" id="f-send" href="https://wa.me/77013130206" target="_blank" rel="noopener">Send the form <span>→</span></a>
         <p class="send-hint">WhatsApp will open with a ready message — just tap “Send”</p>
