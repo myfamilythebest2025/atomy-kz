@@ -195,6 +195,12 @@
     .field label .optional{font-weight:400;letter-spacing:0;text-transform:none}
     .field input,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font:inherit;font-size:15px;color:var(--ink);background:#fff;box-shadow:inset 0 2px 4px #17352b0a}
     .field input:focus,.field select:focus{outline:2px solid var(--gold-soft);border-color:var(--gold)}
+    .birth-wrap{position:relative}
+    .birth-wrap input{padding-right:54px}
+    .birth-picker{position:absolute;top:6px;right:6px;width:40px;height:40px;border:0;border-radius:10px;background:#e7f5fc;color:var(--deep2);font-size:19px;line-height:1;cursor:pointer;box-shadow:inset 0 1px 0 #fff}
+    .birth-picker:active{transform:scale(.94)}
+    .birth-picker:focus-visible{outline:3px solid #7fd4f2;outline-offset:2px}
+    .birth-native{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
     .phone-wrap{display:flex;align-items:stretch}
     .phone-wrap .pfx{display:flex;align-items:center;padding:0 12px;border:1.5px solid var(--line);border-right:0;border-radius:12px 0 0 12px;background:linear-gradient(160deg,#f4f1e6,#e9e2cd);font-weight:900;color:var(--ink)}
     .phone-wrap input{border-radius:0 12px 12px 0}
@@ -638,7 +644,7 @@
           <select id="f-city" disabled><option value="" selected disabled>Сначала выберите страну…</option></select>
         </div>
         <div class="field" id="f-city-other-wrap" style="display:none"><label for="f-city-other">Укажите ваш город</label><input id="f-city-other" autocomplete="off" placeholder="Например: Жанаозен"></div>
-        <div class="field"><label for="f-birth">Дата рождения</label><input id="f-birth" autocomplete="off" inputmode="numeric" placeholder="ДД.ММ.ГГГГ"></div>
+        <div class="field"><label for="f-birth">Дата рождения</label><div class="birth-wrap"><input id="f-birth" autocomplete="bday" inputmode="numeric" maxlength="10" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{4}" placeholder="ДД.ММ.ГГГГ"><button class="birth-picker" id="f-birth-picker" type="button" aria-label="Выбрать дату в календаре" title="Выбрать дату в календаре">📅</button><input class="birth-native" id="f-birth-native" type="date" min="1900-01-01" tabindex="-1" aria-hidden="true"></div></div>
         <div class="field"><label for="f-iin">ИИН <span class="optional">(рекомендуется)</span></label><input id="f-iin" autocomplete="off" inputmode="numeric" placeholder="12 цифр (можно оставить пустым)">
           <div class="hint"><b>Для покупок ИИН не обязателен.</b> Если позже планируете развивать Atomy и получать вознаграждение, его удобнее указать сразу.</div>
           <div class="hint">Анкета отправится Магде в WhatsApp для оформления регистрации в Atomy. Если не готовы передавать ИИН в WhatsApp, оставьте поле пустым.</div>
@@ -674,7 +680,28 @@
       var citySel = document.getElementById('f-city');
       var cityWrap = document.getElementById('f-city-wrap');
       var cityOtherWrap = document.getElementById('f-city-other-wrap');
+      var birth = document.getElementById('f-birth');
+      var birthNative = document.getElementById('f-birth-native');
+      var birthPicker = document.getElementById('f-birth-picker');
       function val(id){ return (document.getElementById(id).value || '').trim(); }
+      function maskBirth(value){
+        var digits = (value || '').replace(/\D/g,'').slice(0,8);
+        if(digits.length < 3) return digits;
+        if(digits.length < 5) return digits.slice(0,2) + '.' + digits.slice(2);
+        return digits.slice(0,2) + '.' + digits.slice(2,4) + '.' + digits.slice(4);
+      }
+      function birthToIso(value){
+        var m = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(value || '');
+        if(!m) return '';
+        var day = Number(m[1]), month = Number(m[2]), year = Number(m[3]);
+        var date = new Date(Date.UTC(year, month - 1, day));
+        if(date.getUTCFullYear() !== year || date.getUTCMonth() !== month - 1 || date.getUTCDate() !== day) return '';
+        return m[3] + '-' + m[2] + '-' + m[1];
+      }
+      function isoToBirth(value){
+        var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || '');
+        return m ? m[3] + '.' + m[2] + '.' + m[1] : '';
+      }
       function fillCities(c){
         var list = CITIES[c] || [];
         citySel.innerHTML = '';
@@ -733,6 +760,21 @@
       });
       document.getElementById('f-phone').addEventListener('input', function(){
         this.value = this.value.replace(/[^\d\s]/g,'');
+      });
+      birthNative.max = new Date().toISOString().slice(0,10);
+      birth.addEventListener('input', function(){
+        var masked = maskBirth(this.value);
+        if(this.value !== masked) this.value = masked;
+        var iso = birthToIso(masked);
+        if(iso) birthNative.value = iso;
+      });
+      birthPicker.addEventListener('click', function(){
+        if(typeof birthNative.showPicker === 'function') birthNative.showPicker();
+        else { birthNative.focus(); birthNative.click(); }
+      });
+      birthNative.addEventListener('change', function(){
+        birth.value = isoToBirth(this.value);
+        birth.dispatchEvent(new Event('input', {bubbles:true}));
       });
       upd();
     })();
