@@ -163,6 +163,13 @@
     .mp-table td:first-child{color:var(--muted)}
     .mp-table td:last-child{font-weight:900;color:var(--deep2);white-space:nowrap}
     .mp-table tr:first-child td{border-top:0}
+    /* требования для уровней мастерства */
+    .mp-masters{font-size:12px;margin:10px 0 8px}
+    .mp-masters th{text-transform:none;letter-spacing:0;font-size:12px;padding-bottom:7px}
+    .mp-masters th:last-child,.mp-masters td:last-child{text-align:left}
+    .mp-masters td{vertical-align:top;padding:9px 0;line-height:1.4}
+    .mp-masters td:first-child{width:38%;padding-right:12px;color:var(--ink);font-weight:900}
+    .mp-masters td:last-child{font-weight:400;color:var(--muted);white-space:normal}
     /* лестница уровней */
     .mp-steps{list-style:none;margin:8px 0 6px;padding:0}
     .mp-steps li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
@@ -540,6 +547,21 @@
           <li><i>4</i><b>Дилер</b><span>1 500 000</span></li>
           <li><i>5</i><b>Эксклюзивный дистрибьютор</b><span>2 400 000</span></li>
         </ul>
+
+        <div class="mp-masters">
+          <table class="mp-table">
+            <tr><th>Уровень мастерства</th><th>Что требуется</th></tr>
+            <tr><td>1. Мастер продаж</td><td>Специальный агент + 2 500 000 PV в каждой ветке за один квалификационный период</td></tr>
+            <tr><td>2. Бриллиантовый мастер</td><td>Дилер + 2 Мастера продаж в каждой ветке</td></tr>
+            <tr><td>3. Мастер Шаронской розы</td><td>Эксклюзивный дистрибьютор + 2 Бриллиантовых мастера в каждой ветке</td></tr>
+            <tr><td>4. Стар мастер</td><td>Эксклюзивный дистрибьютор + 2 Мастера Шаронской розы в каждой ветке</td></tr>
+            <tr><td>5. Роял мастер</td><td>Эксклюзивный дистрибьютор + 2 Стар мастера в каждой ветке</td></tr>
+            <tr><td>6. Краун мастер</td><td>Эксклюзивный дистрибьютор + 2 Роял мастера в каждой ветке</td></tr>
+            <tr><td>7. Империал мастер</td><td>Эксклюзивный дистрибьютор + 2 Краун мастера в каждой ветке</td></tr>
+          </table>
+          <p class="mp-body"><b>Важно:</b> Мастер продаж, Бриллиантовый мастер и Мастер Шаронской розы можно получать без обязательного трёхкратного подтверждения текущего уровня. Для перехода на уровни Стар мастер, Роял мастер, Краун мастер и Империал мастер необходимо подтвердить предыдущий уровень 3 раза.</p>
+          <p class="mp-body">И ещё очень важный момент: Мастер продаж считается за один период — с 1 по 15 или с 16 по конец месяца. Официальный план отдельно указывает именно эти два периода.</p>
+        </div>
 
         <div class="mp-h"><span class="mp-n">6</span><b>Семь уровней мастерства</b></div>
         <p class="mp-body">Уровни мастерства считаются отдельно: объём нужен за один квалификационный период, а не накапливается годами. Первый уровень — <b>Мастер продаж</b> — присваивается, когда в каждой ветке за такой период набирается по 2&nbsp;500&nbsp;000 PV. В новом периоде объём для мастерства считается заново; к вознаграждению добавляются подарки и поездки от компании.</p>

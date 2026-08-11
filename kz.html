@@ -163,6 +163,13 @@
     .mp-table td:first-child{color:var(--muted)}
     .mp-table td:last-child{font-weight:900;color:var(--deep2);white-space:nowrap}
     .mp-table tr:first-child td{border-top:0}
+    /* требования для уровней мастерства */
+    .mp-masters{font-size:12px;margin:10px 0 8px}
+    .mp-masters th{text-transform:none;letter-spacing:0;font-size:12px;padding-bottom:7px}
+    .mp-masters th:last-child,.mp-masters td:last-child{text-align:left}
+    .mp-masters td{vertical-align:top;padding:9px 0;line-height:1.4}
+    .mp-masters td:first-child{width:38%;padding-right:12px;color:var(--ink);font-weight:900}
+    .mp-masters td:last-child{font-weight:400;color:var(--muted);white-space:normal}
     /* лестница уровней */
     .mp-steps{list-style:none;margin:8px 0 6px;padding:0}
     .mp-steps li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
@@ -540,6 +547,21 @@
           <li><i>4</i><b>Дилер</b><span>1 500 000</span></li>
           <li><i>5</i><b>Эксклюзивті дистрибьютор</b><span>2 400 000</span></li>
         </ul>
+
+        <div class="mp-masters">
+          <table class="mp-table">
+            <tr><th>Шеберлік деңгейі</th><th>Не қажет</th></tr>
+            <tr><td>1. Сату шебері</td><td>Арнайы агент + әр тармақта бір біліктілік кезеңі ішінде 2 500 000 PV</td></tr>
+            <tr><td>2. Бриллиант шебері</td><td>Дилер + әр тармақта 2 Сату шебері</td></tr>
+            <tr><td>3. Шарон раушанының шебері</td><td>Эксклюзивті дистрибьютор + әр тармақта 2 Бриллиант шебері</td></tr>
+            <tr><td>4. Стар шебері</td><td>Эксклюзивті дистрибьютор + әр тармақта 2 Шарон раушанының шебері</td></tr>
+            <tr><td>5. Роял шебері</td><td>Эксклюзивті дистрибьютор + әр тармақта 2 Стар шебері</td></tr>
+            <tr><td>6. Краун шебері</td><td>Эксклюзивті дистрибьютор + әр тармақта 2 Роял шебері</td></tr>
+            <tr><td>7. Империал шебері</td><td>Эксклюзивті дистрибьютор + әр тармақта 2 Краун шебері</td></tr>
+          </table>
+          <p class="mp-body"><b>Маңызды:</b> Сату шебері, Бриллиант шебері және Шарон раушанының шебері қазіргі деңгейдің міндетті түрде үш рет расталуынсыз берілуі мүмкін. Стар шебері, Роял шебері, Краун шебері және Империал шебері деңгейлеріне өту үшін алдыңғы деңгейді 3 рет растау қажет.</p>
+          <p class="mp-body">Тағы бір өте маңызды сәт: Сату шебері бір кезең үшін есептеледі — айдың 1-інен 15-іне дейін немесе 16-сынан айдың соңына дейін. Ресми жоспарда дәл осы екі кезең бөлек көрсетілген.</p>
+        </div>
 
         <div class="mp-h"><span class="mp-n">6</span><b>Шеберліктің жеті деңгейі</b></div>
         <p class="mp-body">Шеберлік деңгейлері бөлек есептеледі: көлем жылдар бойы жиналмай, бір біліктілік кезеңі үшін қажет. Бірінші деңгей — <b>Сату шебері</b> — әр тармақта сол кезеңде 2&nbsp;500&nbsp;000 PV жиналғанда беріледі. Жаңа кезеңде шеберлікке арналған көлем қайта есептеледі; сыйақыға компанияның сыйлықтары мен саяхаттары қосылады.</p>

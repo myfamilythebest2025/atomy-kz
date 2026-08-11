@@ -163,6 +163,13 @@
     .mp-table td:first-child{color:var(--muted)}
     .mp-table td:last-child{font-weight:900;color:var(--deep2);white-space:nowrap}
     .mp-table tr:first-child td{border-top:0}
+    /* требования для уровней мастерства */
+    .mp-masters{font-size:12px;margin:10px 0 8px}
+    .mp-masters th{text-transform:none;letter-spacing:0;font-size:12px;padding-bottom:7px}
+    .mp-masters th:last-child,.mp-masters td:last-child{text-align:left}
+    .mp-masters td{vertical-align:top;padding:9px 0;line-height:1.4}
+    .mp-masters td:first-child{width:38%;padding-right:12px;color:var(--ink);font-weight:900}
+    .mp-masters td:last-child{font-weight:400;color:var(--muted);white-space:normal}
     /* лестница уровней */
     .mp-steps{list-style:none;margin:8px 0 6px;padding:0}
     .mp-steps li{display:flex;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
@@ -540,6 +547,21 @@
           <li><i>4</i><b>Dealer</b><span>1 500 000</span></li>
           <li><i>5</i><b>Exclusive Distributor</b><span>2 400 000</span></li>
         </ul>
+
+        <div class="mp-masters">
+          <table class="mp-table">
+            <tr><th>Mastership level</th><th>What is required</th></tr>
+            <tr><td>1. Sales Master</td><td>Special Agent + 2,500,000 PV in each leg during one qualification period</td></tr>
+            <tr><td>2. Diamond Master</td><td>Dealer + 2 Sales Masters in each leg</td></tr>
+            <tr><td>3. Sharon Rose Master</td><td>Exclusive Distributor + 2 Diamond Masters in each leg</td></tr>
+            <tr><td>4. Star Master</td><td>Exclusive Distributor + 2 Sharon Rose Masters in each leg</td></tr>
+            <tr><td>5. Royal Master</td><td>Exclusive Distributor + 2 Star Masters in each leg</td></tr>
+            <tr><td>6. Crown Master</td><td>Exclusive Distributor + 2 Royal Masters in each leg</td></tr>
+            <tr><td>7. Imperial Master</td><td>Exclusive Distributor + 2 Crown Masters in each leg</td></tr>
+          </table>
+          <p class="mp-body"><b>Important:</b> Sales Master, Diamond Master and Sharon Rose Master can be obtained without the mandatory three-time confirmation of the current level. To advance to Star Master, Royal Master, Crown Master or Imperial Master, the previous level must be confirmed three times.</p>
+          <p class="mp-body">One more very important point: Sales Master is counted for one period — from the 1st to the 15th, or from the 16th to the end of the month. The official plan specifically identifies these two periods.</p>
+        </div>
 
         <div class="mp-h"><span class="mp-n">6</span><b>Seven mastership levels</b></div>
         <p class="mp-body">Mastership levels are counted separately: the required volume must be reached within one qualification period, not accumulated over years. The first level — <b>Sales Master</b> — is awarded when each leg reaches 2,500,000 PV during that period. In a new period, the mastership volume is counted from scratch; rewards also include gifts and trips from the company.</p>
